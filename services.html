@@ -2,45 +2,115 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Nos Services - DIGITAL LABS</title>
-  <link rel="stylesheet" href="style.css" />
+  <title>Nos Prestations | DIGITAL LABS</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+  <style>
+    /* Animation fade-in avec délai dynamique */
+    .fade-in {
+      opacity: 0;
+      transform: scale(0.95);
+      animation: fadeIn 0.8s forwards;
+      animation-delay: var(--delay, 0s);
+      transition: transform 0.3s ease;
+    }
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+    /* Animation au survol */
+    .service-card:hover {
+      transform: translateY(-6px) scale(1.02);
+      box-shadow: 0 10px 15px rgba(59, 130, 246, 0.3);
+    }
+  </style>
 </head>
-<body>
+<body class="bg-blue-50">
+  <main class="min-h-screen py-10 px-4 max-w-7xl mx-auto">
+    <h1 class="text-4xl font-bold text-center text-blue-900 mb-6">Nos Prestations DIGITAL LABS</h1>
+    <p class="text-center max-w-xl mx-auto mb-10 text-gray-600">
+      Découvrez nos services principaux et notre expertise pour vous accompagner dans vos projets numériques.
+    </p>
 
-<header>
-  <div class="container">
-    <h1 class="logo">DIGITAL LABS</h1>
-    <nav>
-      <ul class="nav-links">
-        <li><a href="index.html">Accueil</a></li>
-        <li><a href="services.html" class="active">Services</a></li>
-        <li><a href="about.html">À propos</a></li>
-        <li><a href="portfolio.html">Portfolio</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </nav>
-  </div>
-</header>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      <article class="service-card rounded-2xl overflow-hidden shadow-lg bg-white fade-in" style="--delay: 0s;">
+        <img
+          src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2"
+          alt="Conception graphique"
+          class="w-full h-48 object-cover"
+          loading="lazy"
+          decoding="async"
+        />
+        <div class="p-6">
+          <h2 class="text-xl font-semibold mb-3">Conception graphique</h2>
+          <p class="text-gray-600 mb-6">
+            Création de logos, affiches, flyers et visuels uniques pour renforcer votre image.
+          </p>
+          <a href="#" aria-label="Voir plus sur Conception graphique" class="bg-blue-900 text-white py-2 px-5 rounded hover:bg-blue-700 inline-block transition">
+            Voir plus
+          </a>
+        </div>
+      </article>
 
-<section class="section-padding">
-  <div class="container">
-    <h2>Nos Services</h2>
-    <ul>
-      <li>💻 Développement de sites web modernes</li>
-      <li>🎨 Infographie & design professionnel</li>
-      <li>🔒 Cybersécurité & maintenance informatique</li>
-      <li>📲 Création d'application mobile légère</li>
-    </ul>
-  </div>
-</section>
+      <article class="service-card rounded-2xl overflow-hidden shadow-lg bg-white fade-in" style="--delay: 0.15s;">
+        <img
+          src="https://images.unsplash.com/photo-1626465527247-d705aee575d2"
+          alt="Maintenance informatique"
+          class="w-full h-48 object-cover"
+          loading="lazy"
+          decoding="async"
+        />
+        <div class="p-6">
+          <h2 class="text-xl font-semibold mb-3">Maintenance informatique</h2>
+          <p class="text-gray-600 mb-6">
+            Entretien et optimisation de vos équipements informatiques pour un fonctionnement optimal.
+          </p>
+          <a href="#" aria-label="Voir plus sur Maintenance informatique" class="bg-blue-900 text-white py-2 px-5 rounded hover:bg-blue-700 inline-block transition">
+            Voir plus
+          </a>
+        </div>
+      </article>
 
-<footer>
-  <div class="container footer-content">
-    <p>&copy; 2025 DIGITAL LABS - Tous droits réservés</p>
-  </div>
-</footer>
+      <article class="service-card rounded-2xl overflow-hidden shadow-lg bg-white fade-in" style="--delay: 0.3s;">
+        <img
+          src="https://images.unsplash.com/photo-1613643367749-2b34f356fdf4"
+          alt="Assistance et dépannage informatique"
+          class="w-full h-48 object-cover"
+          loading="lazy"
+          decoding="async"
+        />
+        <div class="p-6">
+          <h2 class="text-xl font-semibold mb-3">Assistance et dépannage informatique</h2>
+          <p class="text-gray-600 mb-6">
+            Support technique rapide et efficace pour résoudre vos problèmes informatiques.
+          </p>
+          <a href="#" aria-label="Voir plus sur Assistance et dépannage informatique" class="bg-blue-900 text-white py-2 px-5 rounded hover:bg-blue-700 inline-block transition">
+            Voir plus
+          </a>
+        </div>
+      </article>
 
+      <article class="service-card rounded-2xl overflow-hidden shadow-lg bg-white fade-in" style="--delay: 0.45s;">
+        <img
+          src="https://images.unsplash.com/photo-1616430991934-f9c14db8c59a"
+          alt="Développement web"
+          class="w-full h-48 object-cover"
+          loading="lazy"
+          decoding="async"
+        />
+        <div class="p-6">
+          <h2 class="text-xl font-semibold mb-3">Développement web</h2>
+          <p class="text-gray-600 mb-6">
+            Création de sites web modernes, performants et adaptés à vos besoins.
+          </p>
+          <a href="#" aria-label="Voir plus sur Développement web" class="bg-blue-900 text-white py-2 px-5 rounded hover:bg-blue-700 inline-block transition">
+            Voir plus
+          </a>
+        </div>
+      </article>
+    </div>
+  </main>
 </body>
-  </html>
+                                                                                                </html>
   
