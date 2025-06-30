@@ -3,32 +3,323 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>DIGITAL LABS - Accueil</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css" />
+  <title>DIGITAL LABS | Solutions Digitales Burkina Faso</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <style>
+    :root {
+      --primary: #4361ee;
+      --secondary: #3f37c9;
+      --accent: #4cc9f0;
+      --dark: #1a1a2e;
+      --light: #f8f9fa;
+      --whatsapp: #25D366;
+    }
+    
+    body {
+      font-family: 'Montserrat', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: var(--dark);
+      color: var(--light);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+    
+    .container {
+      width: 85%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 15px;
+    }
+    
+    /* Header */
+    header {
+      background: rgba(26, 26, 46, 0.9);
+      backdrop-filter: blur(10px);
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 15px 0;
+    }
+    
+    .header-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .logo {
+      font-weight: 700;
+      font-size: 1.8rem;
+      background: linear-gradient(90deg, var(--accent), var(--primary));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      margin: 0;
+    }
+    
+    /* Navigation */
+    .nav-links {
+      list-style: none;
+      display: flex;
+      margin: 0;
+      padding: 0;
+      transition: all 0.5s ease;
+    }
+    
+    .nav-links li {
+      margin-left: 30px;
+    }
+    
+    .nav-links a {
+      color: rgba(255, 255, 255, 0.8);
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s;
+      position: relative;
+    }
+    
+    .nav-links a:hover, .nav-links a.active {
+      color: var(--accent);
+    }
+    
+    .nav-links a.active::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: linear-gradient(90deg, var(--accent), var(--primary));
+    }
+    
+    /* Menu Burger */
+    .burger {
+      display: none;
+      cursor: pointer;
+      flex-direction: column;
+      justify-content: space-around;
+      width: 30px;
+      height: 21px;
+      z-index: 1001;
+    }
+    
+    .burger div {
+      width: 100%;
+      height: 3px;
+      background: var(--accent);
+      transition: all 0.3s ease;
+      border-radius: 3px;
+    }
+    
+    /* Hero Section */
+    .hero-section {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding: 120px 0 80px;
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(rgba(26, 26, 46, 0.8), rgba(26, 26, 46, 0.9)), 
+                  url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1350&q=80') no-repeat center/cover;
+    }
+    
+    .hero-content {
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    
+    .hero-section h2 {
+      font-size: 2.8rem;
+      margin-bottom: 20px;
+      background: linear-gradient(90deg, var(--accent), var(--primary));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    
+    .hero-section p {
+      font-size: 1.2rem;
+      margin-bottom: 30px;
+      color: rgba(255, 255, 255, 0.9);
+    }
+    
+    .btn-primary {
+      display: inline-block;
+      padding: 15px 30px;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: white;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s;
+      box-shadow: 0 4px 15px rgba(67, 97, 238, 0.3);
+    }
+    
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 20px rgba(67, 97, 238, 0.4);
+      background: linear-gradient(135deg, var(--secondary), var(--primary));
+    }
+    
+    /* Intro Section */
+    .section-padding {
+      padding: 80px 0;
+    }
+    
+    .intro-text {
+      text-align: center;
+      background: rgba(26, 26, 46, 0.7);
+      backdrop-filter: blur(10px);
+      border-radius: 16px;
+      padding: 40px;
+      margin: -60px auto 0;
+      position: relative;
+      z-index: 3;
+      max-width: 800px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    .intro-text h3 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      color: var(--accent);
+    }
+    
+    .intro-text p {
+      font-size: 1.1rem;
+      color: rgba(255, 255, 255, 0.8);
+    }
+    
+    /* Footer */
+    footer {
+      background: rgba(26, 26, 46, 0.9);
+      backdrop-filter: blur(10px);
+      padding: 30px 0;
+      text-align: center;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    .footer-content p {
+      margin: 10px 0;
+      color: rgba(255, 255, 255, 0.7);
+    }
+    
+    .footer-content a {
+      color: var(--accent);
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    
+    .footer-content a:hover {
+      color: var(--primary);
+    }
+    
+    /* Bouton WhatsApp */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      width: 60px;
+      height: 60px;
+      background-color: var(--whatsapp);
+      color: white;
+      border-radius: 50%;
+      text-align: center;
+      font-size: 30px;
+      box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s;
+    }
+    
+    .whatsapp-float:hover {
+      transform: scale(1.1) translateY(-5px);
+      box-shadow: 0 6px 16px rgba(37, 211, 102, 0.4);
+    }
+    
+    /* Responsive */
+    @media (max-width: 768px) {
+      .container {
+        width: 95%;
+      }
+      
+      .nav-links {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 70%;
+        height: 100vh;
+        background: rgba(26, 26, 46, 0.95);
+        backdrop-filter: blur(15px);
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 0;
+        margin: 0;
+        transition: right 0.5s ease;
+      }
+      
+      .nav-links.active {
+        right: 0;
+      }
+      
+      .nav-links li {
+        margin: 20px 0;
+      }
+      
+      .burger {
+        display: flex;
+      }
+      
+      .hero-section h2 {
+        font-size: 2rem;
+      }
+      
+      .intro-text {
+        padding: 30px;
+        margin-top: -40px;
+      }
+      
+      .whatsapp-float {
+        width: 50px;
+        height: 50px;
+        font-size: 25px;
+        bottom: 20px;
+        right: 20px;
+      }
+    }
+  </style>
 </head>
 <body>
 
 <header>
-  <div class="container">
+  <div class="container header-container">
     <h1 class="logo">DIGITAL LABS</h1>
     <nav>
       <ul class="nav-links">
         <li><a href="index.html" class="active">Accueil</a></li>
-        
         <li><a href="about.html">À propos</a></li>
-        
-        
         <li><a href="contact.html">Contact</a></li>
       </ul>
+      <div class="burger">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
     </nav>
-    <div class="burger">
-      <div></div><div></div><div></div>
-    </div>
   </div>
 </header>
 
-<section class="hero-section" style="background-image: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1350&q=80');">
+<section class="hero-section">
   <div class="container hero-content">
     <h2>Solutions digitales innovantes au Burkina Faso</h2>
     <p>Développement web • Design graphique • Maintenance informatique • Dépannage & Assistance • Cybersécurité</p>
@@ -45,16 +336,49 @@
 
 <footer>
   <div class="container footer-content">
-    <p>&copy; 2025 DIGITAL LABS/ +226 65405568 - Tous droits réservés | Email : ouorodofiniwatienghislain@gmail.com</p>
+    <p>&copy; 2025 DIGITAL LABS - Tous droits réservés</p>
+    <p>Contact: <a href="https://wa.me/22665405568">+226 65405568</a> | Email: <a href="mailto:ouorodofiniwatienghislain@gmail.com">ouorodofiniwatienghislain@gmail.com</a></p>
   </div>
 </footer>
 
-<!-- Bouton WhatsApp -->
-<a href="https://wa.me/22665405568" target="_blank" style="position: fixed; bottom: 20px; right: 20px; background-color: #25D366; color: white; border-radius: 50%; padding: 15px 18px; font-size: 28px; text-decoration: none; box-shadow: 0 4px 6px rgba(0,0,0,0.3); z-index: 1000;">
-  📞
+<!-- Bouton WhatsApp Flottant -->
+<a href="https://wa.me/22665405568" target="_blank" class="whatsapp-float">
+  <i class="fab fa-whatsapp"></i>
 </a>
 
-<script src="script.js"></script>
-</body>
-          </html>
+<script>
+  // Menu Burger Fonctionnel
+  const burger = document.querySelector('.burger');
+  const navLinks = document.querySelector('.nav-links');
+  const navItems = document.querySelectorAll('.nav-links li');
   
+  burger.addEventListener('click', () => {
+    // Animation du burger
+    burger.classList.toggle('toggle');
+    
+    // Affichage du menu
+    navLinks.classList.toggle('active');
+    
+    // Animation des liens
+    navItems.forEach((link, index) => {
+      if (link.style.animation) {
+        link.style.animation = '';
+      } else {
+        link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 + 0.3}s`;
+      }
+    });
+  });
+  
+  // Fermer le menu quand on clique sur un lien
+  navItems.forEach(item => {
+    item.addEventListener('click', () => {
+      navLinks.classList.remove('active');
+      burger.classList.remove('toggle');
+      navItems.forEach(link => {
+        link.style.animation = '';
+      });
+    });
+  });
+</script>
+</body>
+  </html>
