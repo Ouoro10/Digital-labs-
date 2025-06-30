@@ -5,65 +5,71 @@
     <title>Nos Services | DIGITAL LABS</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
     <style>
-      /* Animation fade-in */
-      .fade-in {
-        opacity: 0;
-        transform: translateY(20px);
-        animation: fadeInUp 1s forwards;
-      }
       @keyframes fadeInUp {
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+      .fade-in-up {
+        animation: fadeInUp 1s ease forwards;
       }
     </style>
   </head>
-  <body class="bg-blue-900 text-white">
-    <header class="text-center py-10">
-      <h1 class="text-4xl font-bold">Nos Services</h1>
-      <p class="mt-4 text-lg">Découvrez ce que DIGITAL LABS peut faire pour vous</p>
+  <body class="bg-white text-gray-800">
+
+    <!-- Header -->
+    <header class="bg-blue-900 text-white py-12 text-center">
+      <h1 class="text-4xl font-bold mb-2">Nos Services</h1>
+      <p class="text-lg">Solutions digitales innovantes pour propulser votre activité</p>
     </header>
 
-    <main class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-      <div class="bg-white text-gray-800 rounded-2xl shadow-lg p-6 fade-in">
+    <!-- Services Section -->
+    <section class="container mx-auto px-6 py-16 grid gap-12 md:grid-cols-2 lg:grid-cols-3">
+      <div class="bg-gray-50 rounded-2xl shadow-lg p-8 fade-in-up hover:shadow-xl transition">
+        <img src="https://img.icons8.com/fluency/48/design.png" alt="Conception graphique" class="mb-4">
         <h2 class="text-xl font-semibold mb-2">Conception Graphique</h2>
-        <p>Création de logos, affiches, flyers, cartes de visite et visuels impactants pour booster votre image.</p>
+        <p>Création de logos, identités visuelles, affiches et supports qui valorisent votre marque.</p>
       </div>
 
-      <div class="bg-white text-gray-800 rounded-2xl shadow-lg p-6 fade-in">
+      <div class="bg-gray-50 rounded-2xl shadow-lg p-8 fade-in-up hover:shadow-xl transition">
+        <img src="https://img.icons8.com/fluency/48/laptop-settings.png" alt="Maintenance informatique" class="mb-4">
         <h2 class="text-xl font-semibold mb-2">Maintenance Informatique</h2>
-        <p>Installation, configuration, dépannage de vos équipements informatiques et réseaux.</p>
+        <p>Installation, sécurisation et maintenance de vos équipements informatiques pour un fonctionnement optimal.</p>
       </div>
 
-      <div class="bg-white text-gray-800 rounded-2xl shadow-lg p-6 fade-in">
+      <div class="bg-gray-50 rounded-2xl shadow-lg p-8 fade-in-up hover:shadow-xl transition">
+        <img src="https://img.icons8.com/fluency/48/security-checked.png" alt="Cybersécurité" class="mb-4">
         <h2 class="text-xl font-semibold mb-2">Cybersécurité</h2>
-        <p>Conseil et solutions pour sécuriser vos données et protéger vos systèmes contre les attaques.</p>
+        <p>Protection avancée de vos données et prévention des cyberattaques pour assurer votre tranquillité.</p>
       </div>
 
-      <div class="bg-white text-gray-800 rounded-2xl shadow-lg p-6 fade-in">
+      <div class="bg-gray-50 rounded-2xl shadow-lg p-8 fade-in-up hover:shadow-xl transition">
+        <img src="https://img.icons8.com/fluency/48/web.png" alt="Développement Web" class="mb-4">
         <h2 class="text-xl font-semibold mb-2">Développement Web & App</h2>
-        <p>Création de sites web modernes et d’applications sur mesure pour votre entreprise ou projet personnel.</p>
+        <p>Sites web modernes, applications performantes et design responsive pour une présence digitale impactante.</p>
       </div>
 
-      <div class="bg-white text-gray-800 rounded-2xl shadow-lg p-6 fade-in">
+      <div class="bg-gray-50 rounded-2xl shadow-lg p-8 fade-in-up hover:shadow-xl transition">
+        <img src="https://img.icons8.com/fluency/48/marketing.png" alt="Marketing digital" class="mb-4">
         <h2 class="text-xl font-semibold mb-2">Marketing Digital</h2>
-        <p>Stratégies pour augmenter votre visibilité en ligne et gérer vos réseaux sociaux efficacement.</p>
+        <p>Stratégies digitales pour booster votre visibilité, renforcer votre audience et attirer plus de clients.</p>
       </div>
 
-      <div class="bg-white text-gray-800 rounded-2xl shadow-lg p-6 fade-in">
+      <div class="bg-gray-50 rounded-2xl shadow-lg p-8 fade-in-up hover:shadow-xl transition">
+        <img src="https://img.icons8.com/fluency/48/training.png" alt="Formation" class="mb-4">
         <h2 class="text-xl font-semibold mb-2">Formation & Accompagnement</h2>
-        <p>Formations personnalisées en informatique, cybersécurité et design pour renforcer vos compétences.</p>
+        <p>Sessions personnalisées pour développer vos compétences en informatique, cybersécurité et communication visuelle.</p>
       </div>
-    </main>
+    </section>
 
-    <footer class="text-center mt-12 py-8">
-      <div class="flex items-center justify-center space-x-2">
+    <!-- Footer avec WhatsApp -->
+    <footer class="bg-blue-900 text-white text-center py-8">
+      <div class="flex justify-center items-center space-x-3">
         <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" class="w-6 h-6">
-        <a href="https://wa.me/22665405568" target="_blank" class="text-green-400 hover:underline">+226 65 40 55 68</a>
+        <a href="https://wa.me/22665405568" target="_blank" class="hover:underline">+226 65 40 55 68</a>
       </div>
-      <p class="mt-4 text-sm text-gray-300">&copy; 2025 DIGITAL LABS. Tous droits réservés.</p>
+      <p class="mt-4 text-sm">&copy; 2025 DIGITAL LABS. Tous droits réservés.</p>
     </footer>
+
   </body>
-  </html>
-  
+          </html>
+        
