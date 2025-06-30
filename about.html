@@ -32,7 +32,7 @@
       padding: 0 15px;
     }
     
-    /* Header */
+    /* Header simplifié */
     header {
       background: rgba(26, 26, 46, 0.9);
       backdrop-filter: blur(10px);
@@ -43,12 +43,7 @@
       box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
       border-bottom: 1px solid rgba(255, 255, 255, 0.1);
       padding: 15px 0;
-    }
-    
-    .header-container {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+      text-align: center;
     }
     
     .logo {
@@ -59,41 +54,7 @@
       background-clip: text;
       color: transparent;
       margin: 0;
-    }
-    
-    /* Navigation */
-    .nav-links {
-      list-style: none;
-      display: flex;
-      margin: 0;
-      padding: 0;
-    }
-    
-    .nav-links li {
-      margin-left: 25px;
-    }
-    
-    .nav-links a {
-      color: rgba(255, 255, 255, 0.8);
-      text-decoration: none;
-      font-weight: 500;
-      transition: color 0.3s;
-      position: relative;
-      font-size: 0.95rem;
-    }
-    
-    .nav-links a:hover, .nav-links a.active {
-      color: var(--accent);
-    }
-    
-    .nav-links a.active::after {
-      content: '';
-      position: absolute;
-      bottom: -5px;
-      left: 0;
-      width: 100%;
-      height: 2px;
-      background: linear-gradient(90deg, var(--accent), var(--primary));
+      display: inline-block;
     }
     
     /* About Section */
@@ -214,18 +175,8 @@
 <body>
 
 <header>
-  <div class="container header-container">
+  <div class="container">
     <h1 class="logo">DIGITAL LABS</h1>
-    <nav>
-      <ul class="nav-links">
-        <li><a href="index.html">Accueil</a></li>
-        <li><a href="services.html">Services</a></li>
-        <li><a href="about.html" class="active">À propos</a></li>
-        <li><a href="portfolio.html">Portfolio</a></li>
-        <li><a href="testimonials.html">Témoignages</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </nav>
   </div>
 </header>
 
