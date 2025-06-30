@@ -3,49 +3,353 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Contact - DIGITAL LABS</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css" />
+  <title>Contact WhatsApp - DIGITAL LABS</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <style>
+    :root {
+      --primary: #4361ee;
+      --secondary: #3f37c9;
+      --accent: #4cc9f0;
+      --dark: #1a1a2e;
+      --light: #f8f9fa;
+      --whatsapp: #25D366;
+    }
+    
+    body {
+      font-family: 'Montserrat', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: var(--dark);
+      color: var(--light);
+      background-image: 
+        radial-gradient(circle at 25% 25%, rgba(67, 97, 238, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 75% 75%, rgba(76, 201, 240, 0.15) 0%, transparent 50%);
+      background-attachment: fixed;
+      line-height: 1.6;
+    }
+    
+    .container {
+      width: 85%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 15px;
+    }
+    
+    /* Header */
+    header {
+      background: rgba(26, 26, 46, 0.9);
+      backdrop-filter: blur(10px);
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    .logo {
+      font-weight: 700;
+      font-size: 1.8rem;
+      background: linear-gradient(90deg, var(--accent), var(--primary));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      margin: 0;
+      padding: 20px 0;
+    }
+    
+    /* Main Content */
+    .section-padding {
+      padding: 150px 0 100px;
+      min-height: 100vh;
+    }
+    
+    .contact-hero {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+    
+    .hero-title {
+      font-size: 3rem;
+      margin-bottom: 20px;
+      background: linear-gradient(90deg, var(--accent), var(--primary));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    
+    .hero-subtitle {
+      font-size: 1.2rem;
+      color: rgba(255,255,255,0.8);
+      max-width: 700px;
+      margin: 0 auto 30px;
+    }
+    
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+    }
+    
+    .contact-card {
+      background: rgba(26, 26, 46, 0.7);
+      backdrop-filter: blur(15px);
+      border-radius: 16px;
+      padding: 40px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      transition: transform 0.3s;
+    }
+    
+    .contact-card:hover {
+      transform: translateY(-10px);
+    }
+    
+    .card-title {
+      font-size: 1.8rem;
+      margin-bottom: 20px;
+      color: var(--accent);
+      display: flex;
+      align-items: center;
+    }
+    
+    .card-icon {
+      margin-right: 15px;
+      font-size: 1.5rem;
+    }
+    
+    .whatsapp-card {
+      border-top: 4px solid var(--whatsapp);
+    }
+    
+    .whatsapp-btn {
+      background: linear-gradient(135deg, var(--whatsapp), #128C7E);
+      color: white;
+      padding: 16px 30px;
+      border-radius: 8px;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 600;
+      font-size: 1.1rem;
+      border: none;
+      cursor: pointer;
+      transition: all 0.3s;
+      width: 100%;
+      box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+      margin-top: 20px;
+    }
+    
+    .whatsapp-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+      background: linear-gradient(135deg, #128C7E, var(--whatsapp));
+    }
+    
+    .whatsapp-icon {
+      margin-right: 12px;
+      font-size: 1.5rem;
+    }
+    
+    /* Form */
+    .form-group {
+      margin-bottom: 25px;
+    }
+    
+    label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 500;
+      color: var(--accent);
+    }
+    
+    input, select, textarea {
+      width: 100%;
+      padding: 12px 15px;
+      border-radius: 8px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      background: rgba(255, 255, 255, 0.05);
+      color: var(--light);
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1rem;
+      transition: all 0.3s;
+    }
+    
+    input:focus, select:focus, textarea:focus {
+      outline: none;
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px rgba(76, 201, 240, 0.2);
+      background: rgba(255, 255, 255, 0.1);
+    }
+    
+    textarea {
+      min-height: 150px;
+      resize: vertical;
+    }
+    
+    /* Footer */
+    footer {
+      background: rgba(26, 26, 46, 0.9);
+      backdrop-filter: blur(10px);
+      padding: 30px 0;
+      text-align: center;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    .footer-content p {
+      margin: 10px 0;
+      color: rgba(255, 255, 255, 0.7);
+    }
+    
+    .footer-content a {
+      color: var(--accent);
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    
+    .footer-content a:hover {
+      color: var(--primary);
+    }
+    
+    .whatsapp-number {
+      color: var(--whatsapp);
+      font-weight: 600;
+    }
+    
+    /* Responsive */
+    @media (max-width: 768px) {
+      .container {
+        width: 95%;
+      }
+      
+      .hero-title {
+        font-size: 2.2rem;
+      }
+      
+      .contact-card {
+        padding: 30px;
+      }
+    }
+  </style>
 </head>
 <body>
 
 <header>
   <div class="container">
     <h1 class="logo">DIGITAL LABS</h1>
-    <nav>
-      <ul class="nav-links">
-        <li><a href="index.html">Accueil</a></li>
-        <li><a href="services.html">Services</a></li>
-        <li><a href="about.html">À propos</a></li>
-        <li><a href="portfolio.html">Portfolio</a></li>
-        <li><a href="testimonials.html">Témoignages</a></li>
-        <li><a href="contact.html" class="active">Contact</a></li>
-      </ul>
-    </nav>
-    <div class="burger">
-      <div></div><div></div><div></div>
-    </div>
   </div>
 </header>
 
 <section class="section-padding">
-  <div class="container contact-form">
-    <h2 class="section-title">Contactez-nous</h2>
-    <form id="contactForm">
-      <input type="text" name="name" placeholder="Nom complet" required />
-      <input type="email" name="email" placeholder="Email" required />
-      <textarea name="message" placeholder="Votre message" required></textarea>
-      <button type="submit">Envoyer</button>
-    </form>
+  <div class="container">
+    <div class="contact-hero">
+      <h1 class="hero-title">Support Client WhatsApp</h1>
+      <p class="hero-subtitle">Contactez notre équipe directement via WhatsApp pour une réponse rapide et personnalisée</p>
+    </div>
+    
+    <div class="contact-grid">
+      <div class="contact-card whatsapp-card">
+        <h2 class="card-title"><i class="fab fa-whatsapp card-icon"></i> Formulaire WhatsApp</h2>
+        <p>Remplissez ce formulaire pour envoyer automatiquement votre demande sur WhatsApp</p>
+        
+        <form id="whatsappForm">
+          <div class="form-group">
+            <label for="name">Votre Nom Complet</label>
+            <input type="text" id="name" name="name" required placeholder="Votre nom complet" />
+          </div>
+          
+          <div class="form-group">
+            <label for="service">Type de Demande</label>
+            <select id="service" name="service" required>
+              <option value="">-- Sélectionnez --</option>
+              <option value="Devis">Demande de devis</option>
+              <option value="Commande">Passer une commande</option>
+              <option value="Projet">Développement de projet</option>
+              <option value="Support">Support technique</option>
+              <option value="Urgent">Demande urgente</option>
+            </select>
+          </div>
+          
+          <div class="form-group">
+            <label for="message">Détails de Votre Demande</label>
+            <textarea id="message" name="message" required placeholder="Décrivez en détail votre besoin..."></textarea>
+          </div>
+          
+          <a id="whatsappLink" href="#" class="whatsapp-btn">
+            <i class="fab fa-whatsapp whatsapp-icon"></i>
+            Envoyer via WhatsApp
+          </a>
+        </form>
+      </div>
+      
+      <div class="contact-card">
+        <h2 class="card-title"><i class="fas fa-headset card-icon"></i> Contact Direct</h2>
+        <p><strong>Assistance WhatsApp:</strong></p>
+        <p><a href="https://wa.me/22665405568" class="whatsapp-number">+226 65405568</a></p>
+        
+        <p style="margin-top: 30px;"><strong>Heures d'ouverture:</strong></p>
+        <p>Lun-Ven: 8h-18h</p>
+        <p>Sam: 9h-13h</p>
+        
+        <p style="margin-top: 30px;"><strong>Pour les demandes urgentes:</strong></p>
+        <p>Appuyez directement sur le numéro ci-dessus pour discuter immédiatement avec notre équipe.</p>
+      </div>
+    </div>
   </div>
 </section>
 
 <footer>
   <div class="container footer-content">
-    <p>&copy; 2025 DIGITAL LABS - Tous droits réservés | Email : ouorodofiniwatienghislain@gmail.com</p>
+    <p><strong>DIGITAL LABS</strong> - Solutions Digitales Professionnelles</p>
+    <p>Support WhatsApp: <a href="https://wa.me/22665405568" class="whatsapp-number">+226 65405568</a> | Email: contact@digital-labs.com</p>
+    <p>&copy; 2025 DIGITAL LABS - Tous droits réservés</p>
   </div>
 </footer>
 
-<script src="script.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const form = document.getElementById('whatsappForm');
+    const whatsappLink = document.getElementById('whatsappLink');
+    
+    // Formatage professionnel du message
+    function formatWhatsAppMessage(name, service, message) {
+      return `Bonjour DIGITAL LABS,%0A%0A*De:* ${encodeURIComponent(name)}%0A*Type de demande:* ${encodeURIComponent(service)}%0A%0A*Détails:*%0A${encodeURIComponent(message)}%0A%0A*Informations complémentaires:*%0A• Urgence: [normal/urgent]%0A• Délai souhaité: [date]%0A• Budget: [montant]%0A%0AMerci pour votre retour.%0A%0ACordialement,%0A${encodeURIComponent(name)}`;
+    }
+    
+    // Mise à jour du lien WhatsApp
+    function updateWhatsAppLink() {
+      const name = document.getElementById('name').value.trim();
+      const service = document.getElementById('service').value;
+      const message = document.getElementById('message').value.trim();
+      
+      if(name && service && message) {
+        const formattedMessage = formatWhatsAppMessage(name, service, message);
+        whatsappLink.href = `https://wa.me/22665405568?text=${formattedMessage}`;
+      }
+    }
+    
+    // Écouteurs d'événements
+    form.addEventListener('input', updateWhatsAppLink);
+    
+    whatsappLink.addEventListener('click', function(e) {
+      if(!document.getElementById('name').value || 
+         !document.getElementById('service').value || 
+         !document.getElementById('message').value) {
+        e.preventDefault();
+        alert('Veuillez remplir tous les champs obligatoires avant d\'envoyer.');
+      }
+    });
+    
+    // Lien direct WhatsApp pré-rempli
+    const directWhatsappLinks = document.querySelectorAll('a[href*="wa.me"]');
+    directWhatsappLinks.forEach(link => {
+      if(link.id !== 'whatsappLink') {
+        link.href = `https://wa.me/22665405568?text=Bonjour%20DIGITAL%20LABS,%0A%0APouvez-vous%20m'aider%20?%0A%0AMerci.`;
+      }
+    });
+  });
+</script>
 </body>
-</html>
+  </html>
