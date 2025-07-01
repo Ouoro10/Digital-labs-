@@ -191,11 +191,33 @@
       background: linear-gradient(135deg, var(--secondary), var(--primary));
     }
     
-    /* Intro Section */
+    /* Sections communes */
     .section-padding {
       padding: 80px 0;
     }
     
+    .section-title {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+    
+    .section-title h2 {
+      font-size: 2.5rem;
+      background: linear-gradient(90deg, var(--accent), var(--primary));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      margin-bottom: 15px;
+    }
+    
+    .section-title p {
+      color: var(--text-color);
+      opacity: 0.8;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    
+    /* Intro Section */
     .intro-text {
       text-align: center;
       background: var(--card-bg);
@@ -221,6 +243,119 @@
       font-size: 1.1rem;
       color: var(--text-color);
       opacity: 0.8;
+    }
+    
+    /* Section Statistiques */
+    .stats-section {
+      padding: 60px 0;
+      text-align: center;
+    }
+    
+    .stats-container {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+    
+    .stat-card {
+      background: var(--card-bg);
+      backdrop-filter: blur(10px);
+      border-radius: 16px;
+      padding: 30px;
+      min-width: 200px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+      border: 1px solid rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+    }
+    
+    .stat-card:hover {
+      transform: translateY(-5px);
+    }
+    
+    .stat-number {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+      background: linear-gradient(90deg, var(--accent), var(--primary));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    
+    .stat-label {
+      font-size: 1rem;
+      color: var(--text-color);
+      opacity: 0.8;
+    }
+    
+    /* Section À propos */
+    .about-section {
+      padding: 100px 0;
+    }
+    
+    .about-content {
+      display: flex;
+      align-items: center;
+      gap: 50px;
+    }
+    
+    .about-text {
+      flex: 1;
+    }
+    
+    .about-image {
+      flex: 1;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    }
+    
+    .about-image img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    
+    /* Section Contact */
+    .contact-section {
+      padding: 100px 0;
+    }
+    
+    .contact-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+    }
+    
+    .contact-info {
+      background: var(--card-bg);
+      backdrop-filter: blur(10px);
+      border-radius: 16px;
+      padding: 30px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+      border: 1px solid rgba(0, 0, 0, 0.1);
+    }
+    
+    .contact-info h3 {
+      color: var(--accent);
+      margin-bottom: 20px;
+    }
+    
+    .contact-info p {
+      margin-bottom: 15px;
+      color: var(--text-color);
+      opacity: 0.9;
+    }
+    
+    .contact-info a {
+      color: var(--accent);
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    
+    .contact-info a:hover {
+      color: var(--primary);
     }
     
     /* Footer */
@@ -335,6 +470,7 @@
       
       .nav-links li {
         margin: 20px 0;
+        margin-left: 0;
       }
       
       .burger {
@@ -348,6 +484,19 @@
       .intro-text {
         padding: 30px;
         margin-top: -40px;
+      }
+      
+      .about-content {
+        flex-direction: column;
+      }
+      
+      .stat-card {
+        min-width: 150px;
+        padding: 20px;
+      }
+      
+      .stat-number {
+        font-size: 2rem;
       }
       
       .whatsapp-float {
@@ -388,6 +537,7 @@
   </div>
 </header>
 
+<!-- Pour index.html -->
 <section class="hero-section">
   <div class="container hero-content">
     <h2>Solutions digitales innovantes au Burkina Faso</h2>
@@ -402,6 +552,70 @@
     <p>Nous sommes une entreprise made in Burkina spécialisée dans la création de solutions digitales modernes et performantes pour accompagner la transformation numérique des entreprises locales.</p>
   </div>
 </section>
+
+<!-- Section Statistiques -->
+<section class="stats-section">
+  <div class="container">
+    <div class="stats-container">
+      <div class="stat-card">
+        <div class="stat-number" id="onlineVisitors">0</div>
+        <div class="stat-label">Visiteurs en ligne</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number" id="totalVisits">0</div>
+        <div class="stat-label">Total des visites</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Pour about.html (à mettre dans about.html) -->
+<!--
+<section class="about-section section-padding">
+  <div class="container">
+    <div class="section-title">
+      <h2>À propos de nous</h2>
+      <p>Découvrez notre équipe et notre passion pour l'innovation digitale</p>
+    </div>
+    <div class="about-content">
+      <div class="about-text">
+        <h3>Notre histoire</h3>
+        <p>Digital Labs est né de la passion commune de ses fondateurs pour les technologies numériques et leur potentiel à transformer les entreprises au Burkina Faso.</p>
+        <p>Depuis notre création, nous nous engageons à fournir des solutions sur mesure qui répondent aux besoins spécifiques de nos clients.</p>
+      </div>
+      <div class="about-image">
+        <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1350&q=80" alt="Notre équipe">
+      </div>
+    </div>
+  </div>
+</section>
+-->
+
+<!-- Pour contact.html (à mettre dans contact.html) -->
+<!--
+<section class="contact-section section-padding">
+  <div class="container">
+    <div class="section-title">
+      <h2>Contactez-nous</h2>
+      <p>Nous sommes à votre écoute pour répondre à toutes vos questions</p>
+    </div>
+    <div class="contact-container">
+      <div class="contact-info">
+        <h3>Coordonnées</h3>
+        <p><i class="fas fa-map-marker-alt"></i> Ouagadougou, Burkina Faso</p>
+        <p><i class="fas fa-phone"></i> <a href="tel:+22665405568">+226 65405568</a></p>
+        <p><i class="fas fa-envelope"></i> <a href="mailto:ouorodofiniwatienghislain@gmail.com">ouorodofiniwatienghislain@gmail.com</a></p>
+      </div>
+      <div class="contact-info">
+        <h3>Heures d'ouverture</h3>
+        <p>Lundi - Vendredi: 8h - 18h</p>
+        <p>Samedi: 9h - 13h</p>
+        <p>Dimanche: Fermé</p>
+      </div>
+    </div>
+  </div>
+</section>
+-->
 
 <footer>
   <div class="container footer-content">
@@ -480,6 +694,67 @@
       localStorage.setItem('theme', 'dark');
     }
   });
-</script>
-</body>
-  </html>
+  
+  // Marquer le lien actif dans la navigation
+  const currentPage = window.location.pathname.split('/').pop();
+  const navLinksAll = document.querySelectorAll('.nav-links a');
+  
+  navLinksAll.forEach(link => {
+    if (link.getAttribute('href') === currentPage) {
+      link.classList.add('active');
+    } else {
+      link.classList.remove('active');
+    }
+  });
+  
+  // Statistiques des visiteurs
+  document.addEventListener('DOMContentLoaded', function() {
+    // Récupérer ou initialiser les données de visite
+    let visitsData = JSON.parse(localStorage.getItem('visitsData')) || {
+      totalVisits: 0,
+      onlineVisitors: 0,
+      lastVisit: null,
+      visitorId: null
+    };
+    
+    // Générer un ID unique pour ce visiteur s'il n'en a pas
+    if (!visitsData.visitorId) {
+      visitsData.visitorId = 'visitor-' + Math.random().toString(36).substr(2, 9);
+    }
+    
+    // Vérifier si c'est une nouvelle visite (pas un rafraîchissement)
+    const now = new Date().getTime();
+    const isNewVisit = !visitsData.lastVisit || (now - visitsData.lastVisit) > 30000; // 30s
+    
+    if (isNewVisit) {
+      visitsData.totalVisits += 1;
+      visitsData.onlineVisitors += 1;
+      visitsData.lastVisit = now;
+    }
+    
+    // Enregistrer les données mises à jour
+    localStorage.setItem('visitsData', JSON.stringify(visitsData));
+    
+    // Afficher les statistiques
+    document.getElementById('totalVisits').textContent = visitsData.totalVisits;
+    document.getElementById('onlineVisitors').textContent = visitsData.onlineVisitors;
+    
+    // Diminuer le compteur des visiteurs en ligne quand l'utilisateur quitte
+    window.addEventListener('beforeunload', function() {
+      let visitsData = JSON.parse(localStorage.getItem('visitsData')) || {
+        onlineVisitors: 0
+      };
+      
+      if (visitsData.onlineVisitors > 0) {
+        visitsData.onlineVisitors -= 1;
+        localStorage.setItem('visitsData', JSON.stringify(visitsData));
+      }
+    });
+    
+    // Mettre à jour périodiquement le nombre de visiteurs en ligne
+    setInterval(function() {
+      let visitsData = JSON.parse(localStorage.getItem('visitsData')) || {
+        onlineVisitors: 0
+      };
+      document.getElementById('onlineVisitors').textContent = visitsData.onlineVisitors;
+    }, 30000
