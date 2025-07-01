@@ -315,6 +315,43 @@
       opacity: 0.8;
     }
     
+    /* Espace Publicité */
+    .ad-space {
+      margin: 60px auto;
+      max-width: 1000px;
+      text-align: center;
+      padding: 20px;
+      background: var(--card-bg);
+      backdrop-filter: blur(10px);
+      border-radius: 16px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+      border: 1px solid rgba(0, 0, 0, 0.1);
+      transition: background-color 0.5s ease;
+    }
+    
+    .ad-space h3 {
+      color: var(--accent);
+      margin-bottom: 15px;
+      font-size: 1.2rem;
+    }
+    
+    .ad-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 90px;
+      padding: 15px;
+      background: rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+      border: 1px dashed var(--accent);
+    }
+    
+    .ad-container p {
+      color: var(--text-color);
+      opacity: 0.7;
+      font-style: italic;
+    }
+    
     /* Footer */
     footer {
       background: var(--header-bg);
@@ -452,6 +489,11 @@
         font-size: 2rem;
       }
       
+      .ad-space {
+        margin: 40px auto;
+        padding: 15px;
+      }
+      
       .whatsapp-float {
         width: 50px;
         height: 50px;
@@ -505,6 +547,16 @@
   </div>
 </section>
 
+<!-- Espace Publicité -->
+<div class="container">
+  <div class="ad-space">
+    <h3>ESPACE PUBLICITAIRE</h3>
+    <div class="ad-container">
+      <p>Votre publicité pourrait apparaître ici</p>
+    </div>
+  </div>
+</div>
+
 <section class="stats-section">
   <div class="container">
     <div class="stats-container">
@@ -519,6 +571,16 @@
     </div>
   </div>
 </section>
+
+<!-- Espace Publicité -->
+<div class="container">
+  <div class="ad-space">
+    <h3>PARTENARIATS</h3>
+    <div class="ad-container">
+      <p>Espace réservé à nos partenaires</p>
+    </div>
+  </div>
+</div>
 
 <footer>
   <div class="container footer-content">
@@ -641,6 +703,21 @@
       document.getElementById('onlineVisitors').textContent = visitsData.onlineVisitors;
     }, 30000);
   });
+  
+  // Gestion des publicités (exemple)
+  document.addEventListener('DOMContentLoaded', function() {
+    // Vous pourriez charger des publicités dynamiquement ici
+    // fetch('https://votre-api.com/publicites')
+    //   .then(response => response.json())
+    //   .then(data => {
+    //     const adContainers = document.querySelectorAll('.ad-container');
+    //     adContainers.forEach((container, index) => {
+    //       if (data[index]) {
+    //         container.innerHTML = `<a href="${data[index].url}" target="_blank"><img src="${data[index].image}" alt="${data[index].alt}"></a>`;
+    //       }
+    //     });
+    //   });
+  });
 </script>
 </body>
-</html>
+  </html>
