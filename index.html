@@ -3,724 +3,257 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>DIGITAL LABS | Solutions Digitales Burkina Faso</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <meta name="description" content="DIGITAL LABS - Solutions digitales premium au Burkina Faso : développement web, infographie, cybersécurité et assistance informatique.">
+  <meta name="keywords" content="développement web, Burkina Faso, site internet, infographie, cybersécurité, assistance informatique">
+  <meta name="author" content="DIGITAL LABS">
+  <title>DIGITAL LABS | Solutions Digitales Haut de Gamme - Burkina Faso</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css">
   <style>
     :root {
-      --primary: #4361ee;
-      --secondary: #3f37c9;
-      --accent: #4cc9f0;
-      --dark: #1a1a2e;
-      --light: #f8f9fa;
-      --whatsapp: #25D366;
-      --bg-color: #1a1a2e;
-      --text-color: #f8f9fa;
-      --header-bg: rgba(26, 26, 46, 0.9);
-      --card-bg: rgba(26, 26, 46, 0.7);
+      --primary: #0066CC;  /* Bleu professionnel */
+      --primary-dark: #004C99;
+      --secondary: #00C1DE; /* Bleu turquoise moderne */
+      --accent: #FF6B00;   /* Orange vif pour les CTA */
+      --dark: #0A192F;     /* Bleu marine foncé */
+      --light: #F8F9FA;
+      --text-color: #2D3748;
+      --text-light: #FFFFFF;
+      --header-bg: rgba(10, 25, 47, 0.95);
+      --card-bg: #FFFFFF;
+      --gradient: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+      --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.15);
+      --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
     }
-    
-    /* Mode jour */
-    .light-mode {
-      --bg-color: #f8f9fa;
-      --text-color: #1a1a2e;
-      --header-bg: rgba(248, 249, 250, 0.9);
-      --card-bg: rgba(248, 249, 250, 0.7);
-      --dark: #e9ecef;
-      --light: #1a1a2e;
-    }
-    
-    body {
-      font-family: 'Montserrat', sans-serif;
+
+    * {
       margin: 0;
       padding: 0;
-      background-color: var(--bg-color);
-      color: var(--text-color);
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
       line-height: 1.6;
+      color: var(--text-color);
+      background-color: var(--light);
       overflow-x: hidden;
-      transition: background-color 0.5s ease, color 0.5s ease;
+      scroll-behavior: smooth;
     }
-    
-    .container {
-      width: 85%;
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 15px;
+
+    h1, h2, h3, h4 {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      line-height: 1.2;
     }
-    
-    /* Header */
+
+    /* Header moderne avec animation */
     header {
       background: var(--header-bg);
-      backdrop-filter: blur(10px);
-      position: fixed;
-      width: 100%;
-      top: 0;
-      z-index: 1000;
-      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-      border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-      padding: 15px 0;
-      transition: background-color 0.5s ease;
-    }
-    
-    .header-container {
       display: flex;
       justify-content: space-between;
       align-items: center;
+      padding: 1rem 5%;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+      box-shadow: var(--shadow);
+      transition: var(--transition);
+      backdrop-filter: blur(10px);
     }
-    
-    .logo {
+
+    header.scrolled {
+      padding: 0.8rem 5%;
+      background: rgba(10, 25, 47, 0.98);
+    }
+
+    .logo-section {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+    }
+
+    .logo-section img {
+      height: 2.5rem;
+      transition: var(--transition);
+    }
+
+    .logo-section span {
+      font-size: 1.5rem;
       font-weight: 700;
-      font-size: 1.8rem;
-      background: linear-gradient(90deg, var(--accent), var(--primary));
+      color: var(--text-light);
+      background: var(--gradient);
       -webkit-background-clip: text;
       background-clip: text;
-      color: transparent;
-      margin: 0;
+      -webkit-text-fill-color: transparent;
     }
-    
-    /* Navigation */
-    .nav-links {
-      list-style: none;
+
+    /* Navigation moderne */
+    nav ul {
       display: flex;
-      margin: 0;
-      padding: 0;
-      transition: all 0.5s ease;
+      list-style: none;
+      gap: 2rem;
     }
-    
-    .nav-links li {
-      margin-left: 30px;
-    }
-    
-    .nav-links a {
-      color: var(--text-color);
+
+    nav ul li a {
+      color: var(--text-light);
       text-decoration: none;
       font-weight: 500;
-      transition: color 0.3s;
+      font-size: 1rem;
       position: relative;
-      opacity: 0.8;
+      padding: 0.5rem 0;
+      transition: var(--transition);
     }
-    
-    .nav-links a:hover, .nav-links a.active {
-      color: var(--accent);
-      opacity: 1;
-    }
-    
-    .nav-links a.active::after {
+
+    nav ul li a::after {
       content: '';
       position: absolute;
-      bottom: -5px;
+      bottom: 0;
       left: 0;
-      width: 100%;
+      width: 0;
       height: 2px;
-      background: linear-gradient(90deg, var(--accent), var(--primary));
+      background: var(--secondary);
+      transition: var(--transition);
     }
-    
-    /* Menu Burger */
-    .burger {
-      display: none;
-      cursor: pointer;
-      position: relative;
-      width: 30px;
-      height: 21px;
-      z-index: 1001;
-    }
-    
-    .burger div {
-      position: absolute;
-      right: 0;
+
+    nav ul li a:hover::after,
+    nav ul li a.active::after {
       width: 100%;
-      height: 3px;
-      background: var(--accent);
-      transition: all 0.3s ease;
-      border-radius: 3px;
     }
-    
-    .burger div:nth-child(1) {
-      top: 0;
+
+    nav ul li a:hover {
+      color: var(--secondary);
     }
-    
-    .burger div:nth-child(2) {
-      top: 9px;
+
+    .mobile-menu-btn {
+      display: none;
+      background: none;
+      border: none;
+      color: var(--text-light);
+      font-size: 1.5rem;
+      cursor: pointer;
     }
-    
-    .burger div:nth-child(3) {
-      top: 18px;
-    }
-    
-    /* Animation du burger quand actif */
-    .burger.toggle div:nth-child(1) {
-      transform: rotate(-45deg) translate(-5px, 6px);
-    }
-    
-    .burger.toggle div:nth-child(2) {
-      opacity: 0;
-    }
-    
-    .burger.toggle div:nth-child(3) {
-      transform: rotate(45deg) translate(-5px, -6px);
-    }
-    
-    /* Hero Section */
+
+    /* Hero section avec animation */
     .hero-section {
-      min-height: 100vh;
+      height: 100vh;
+      min-height: 800px;
       display: flex;
-      align-items: center;
-      padding: 120px 0 80px;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 0 5%;
       position: relative;
       overflow: hidden;
-      background: linear-gradient(rgba(26, 26, 46, 0.8), rgba(26, 26, 46, 0.9)), 
-                  url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1350&q=80') no-repeat center/cover;
+      color: var(--text-light);
     }
-    
-    .light-mode .hero-section {
-      background: linear-gradient(rgba(248, 249, 250, 0.7), rgba(248, 249, 250, 0.8)), 
-                  url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1350&q=80') no-repeat center/cover;
+
+    .hero-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, rgba(0, 102, 204, 0.85) 0%, rgba(0, 193, 222, 0.9) 100%),
+                  url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80') center/cover no-repeat;
+      z-index: -1;
     }
-    
+
     .hero-content {
-      text-align: center;
-      max-width: 800px;
-      margin: 0 auto;
+      max-width: 700px;
+      transform: translateY(20px);
+      opacity: 0;
+      animation: fadeInUp 1s ease forwards 0.3s;
     }
-    
-    .hero-section h2 {
-      font-size: 2.8rem;
-      margin-bottom: 20px;
-      background: linear-gradient(90deg, var(--accent), var(--primary));
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
+
+    .hero-section h1 {
+      font-size: 3.5rem;
+      margin-bottom: 1.5rem;
+      line-height: 1.1;
     }
-    
+
     .hero-section p {
-      font-size: 1.2rem;
-      margin-bottom: 30px;
-      color: var(--text-color);
+      font-size: 1.25rem;
+      margin-bottom: 2.5rem;
       opacity: 0.9;
     }
-    
-    .btn-primary {
+
+    .btn {
       display: inline-block;
-      padding: 15px 30px;
-      background: linear-gradient(135deg, var(--primary), var(--secondary));
-      color: white;
-      border-radius: 8px;
-      text-decoration: none;
+      padding: 1rem 2.5rem;
+      border-radius: 50px;
       font-weight: 600;
-      transition: all 0.3s;
-      box-shadow: 0 4px 15px rgba(67, 97, 238, 0.3);
+      font-size: 1rem;
+      cursor: pointer;
+      transition: var(--transition);
+      text-decoration: none;
+      text-align: center;
+      box-shadow: var(--shadow);
     }
-    
+
+    .btn-primary {
+      background: var(--accent);
+      color: white;
+      border: 2px solid var(--accent);
+    }
+
     .btn-primary:hover {
+      background: transparent;
+      color: var(--accent);
       transform: translateY(-3px);
-      box-shadow: 0 6px 20px rgba(67, 97, 238, 0.4);
-      background: linear-gradient(135deg, var(--secondary), var(--primary));
+      box-shadow: var(--shadow-lg);
     }
-    
-    /* Sections communes */
-    .section-padding {
-      padding: 80px 0;
+
+    .btn-secondary {
+      background: transparent;
+      color: var(--text-light);
+      border: 2px solid var(--text-light);
+      margin-left: 1rem;
     }
-    
+
+    .btn-secondary:hover {
+      background: var(--text-light);
+      color: var(--primary);
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    /* Section Services moderne */
+    .section {
+      padding: 6rem 5%;
+      position: relative;
+    }
+
     .section-title {
       text-align: center;
-      margin-bottom: 50px;
+      margin-bottom: 4rem;
     }
-    
+
     .section-title h2 {
       font-size: 2.5rem;
-      background: linear-gradient(90deg, var(--accent), var(--primary));
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-      margin-bottom: 15px;
-    }
-    
-    .section-title p {
-      color: var(--text-color);
-      opacity: 0.8;
-      max-width: 700px;
-      margin: 0 auto;
-    }
-    
-    /* Intro Section */
-    .intro-text {
-      text-align: center;
-      background: var(--card-bg);
-      backdrop-filter: blur(10px);
-      border-radius: 16px;
-      padding: 40px;
-      margin: -60px auto 0;
+      margin-bottom: 1rem;
       position: relative;
-      z-index: 3;
-      max-width: 800px;
-      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
-      border: 1px solid rgba(0, 0, 0, 0.1);
-      transition: background-color 0.5s ease;
+      display: inline-block;
     }
-    
-    .intro-text h3 {
-      font-size: 2rem;
-      margin-bottom: 20px;
-      color: var(--accent);
-    }
-    
-    .intro-text p {
-      font-size: 1.1rem;
-      color: var(--text-color);
-      opacity: 0.8;
-    }
-    
-    /* Section Statistiques */
-    .stats-section {
-      padding: 60px 0;
-      text-align: center;
-    }
-    
-    .stats-container {
-      display: flex;
-      justify-content: center;
-      gap: 30px;
-      flex-wrap: wrap;
-    }
-    
-    .stat-card {
-      background: var(--card-bg);
-      backdrop-filter: blur(10px);
-      border-radius: 16px;
-      padding: 30px;
-      min-width: 200px;
-      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
-      border: 1px solid rgba(0, 0, 0, 0.1);
-      transition: transform 0.3s ease;
-    }
-    
-    .stat-card:hover {
-      transform: translateY(-5px);
-    }
-    
-    .stat-number {
-      font-size: 2.5rem;
-      font-weight: 700;
-      margin-bottom: 10px;
-      background: linear-gradient(90deg, var(--accent), var(--primary));
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-    }
-    
-    .stat-label {
-      font-size: 1rem;
-      color: var(--text-color);
-      opacity: 0.8;
-    }
-    
-    /* Espace Publicité */
-    .ad-space {
-      margin: 60px auto;
-      max-width: 1000px;
-      text-align: center;
-      padding: 20px;
-      background: var(--card-bg);
-      backdrop-filter: blur(10px);
-      border-radius: 16px;
-      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
-      border: 1px solid rgba(0, 0, 0, 0.1);
-      transition: background-color 0.5s ease;
-    }
-    
-    .ad-space h3 {
-      color: var(--accent);
-      margin-bottom: 15px;
-      font-size: 1.2rem;
-    }
-    
-    .ad-container {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 90px;
-      padding: 15px;
-      background: rgba(0, 0, 0, 0.1);
-      border-radius: 8px;
-      border: 1px dashed var(--accent);
-    }
-    
-    .ad-container p {
-      color: var(--text-color);
-      opacity: 0.7;
-      font-style: italic;
-    }
-    
-    /* Footer */
-    footer {
-      background: var(--header-bg);
-      backdrop-filter: blur(10px);
-      padding: 30px 0;
-      text-align: center;
-      border-top: 1px solid rgba(0, 0, 0, 0.1);
-      transition: background-color 0.5s ease;
-    }
-    
-    .footer-content p {
-      margin: 10px 0;
-      color: var(--text-color);
-      opacity: 0.7;
-    }
-    
-    .footer-content a {
-      color: var(--accent);
-      text-decoration: none;
-      transition: color 0.3s;
-    }
-    
-    .footer-content a:hover {
-      color: var(--primary);
-    }
-    
-    /* Bouton WhatsApp */
-    .whatsapp-float {
-      position: fixed;
-      bottom: 30px;
-      right: 30px;
-      width: 60px;
-      height: 60px;
-      background-color: var(--whatsapp);
-      color: white;
-      border-radius: 50%;
-      text-align: center;
-      font-size: 30px;
-      box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
-      z-index: 100;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: all 0.3s;
-    }
-    
-    .whatsapp-float:hover {
-      transform: scale(1.1) translateY(-5px);
-      box-shadow: 0 6px 16px rgba(37, 211, 102, 0.4);
-    }
-    
-    /* Bouton Mode Jour/Nuit */
-    .theme-toggle {
-      position: fixed;
-      bottom: 100px;
-      left: 30px;
-      width: 60px;
-      height: 60px;
-      background-color: var(--primary);
-      color: white;
-      border-radius: 50%;
-      text-align: center;
-      font-size: 24px;
-      box-shadow: 0 4px 12px rgba(67, 97, 238, 0.3);
-      z-index: 100;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      transition: all 0.3s;
-      border: none;
-      outline: none;
-    }
-    
-    .theme-toggle:hover {
-      transform: scale(1.1) translateY(-5px);
-      box-shadow: 0 6px 16px rgba(67, 97, 238, 0.4);
-      background-color: var(--secondary);
-    }
-    
-    .theme-toggle i {
-      transition: transform 0.5s ease;
-    }
-    
-    /* Responsive */
-    @media (max-width: 768px) {
-      .container {
-        width: 95%;
-      }
-      
-      .nav-links {
-        position: fixed;
-        top: 0;
-        right: -100%;
-        width: 70%;
-        height: 100vh;
-        background: var(--header-bg);
-        backdrop-filter: blur(15px);
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        padding: 0;
-        margin: 0;
-        transition: right 0.5s ease;
-      }
-      
-      .nav-links.active {
-        right: 0;
-      }
-      
-      .nav-links li {
-        margin: 20px 0;
-        margin-left: 0;
-      }
-      
-      .burger {
-        display: flex;
-      }
-      
-      .hero-section h2 {
-        font-size: 2rem;
-      }
-      
-      .intro-text {
-        padding: 30px;
-        margin-top: -40px;
-      }
-      
-      .stat-card {
-        min-width: 150px;
-        padding: 20px;
-      }
-      
-      .stat-number {
-        font-size: 2rem;
-      }
-      
-      .ad-space {
-        margin: 40px auto;
-        padding: 15px;
-      }
-      
-      .whatsapp-float {
-        width: 50px;
-        height: 50px;
-        font-size: 25px;
-        bottom: 20px;
-        right: 20px;
-      }
-      
-      .theme-toggle {
-        width: 50px;
-        height: 50px;
-        font-size: 20px;
-        bottom: 80px;
-        left: 20px;
-      }
-    }
-  </style>
-</head>
-<body>
 
-<header>
-  <div class="container header-container">
-    <h1 class="logo">DIGITAL LABS</h1>
-    <nav>
-      <ul class="nav-links">
-        <li><a href="index.html" class="active">Accueil</a></li>
-        <li><a href="about.html">À propos</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-      <div class="burger">
-        <div></div>
-        <div></div>
-        <div></div>
-      </div>
-    </nav>
-  </div>
-</header>
-
-<section class="hero-section">
-  <div class="container hero-content">
-    <h2>Solutions digitales innovantes au Burkina Faso</h2>
-    <p>Développement web • Design graphique • Maintenance informatique • Dépannage & Assistance • Cybersécurité</p>
-    <a href="contact.html" class="btn-primary">Contactez-nous</a>
-  </div>
-</section>
-
-<section class="section-padding intro-text">
-  <div class="container">
-    <h3>Bienvenue chez DIGITAL LABS</h3>
-    <p>Nous sommes une entreprise made in Burkina spécialisée dans la création de solutions digitales modernes et performantes pour accompagner la transformation numérique des entreprises locales.</p>
-  </div>
-</section>
-
-<!-- Espace Publicité -->
-<div class="container">
-  <div class="ad-space">
-    <h3>ESPACE PUBLICITAIRE</h3>
-    <div class="ad-container">
-      <p><strong>Une affiche, c'est bien. Un site web, c'est encore mieux!</strong><br>
-      Digital Labs crée des mini-sites professionnels pour vos cérémonies, concerts & événements, entreprises & services.<br>
-      Design moderne • Prix réduits • Impact maximal<br>
-      Contactez-nous via WhatsApp: +226 65405568</p>
-    </div>
-  </div>
-</div>
-
-<section class="stats-section">
-  <div class="container">
-    <div class="stats-container">
-      <div class="stat-card">
-        <div class="stat-number" id="onlineVisitors">0</div>
-        <div class="stat-label">Visiteurs en ligne</div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-number" id="totalVisits">0</div>
-        <div class="stat-label">Total des visites</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Espace Publicité -->
-<div class="container">
-  <div class="ad-space">
-    <h3>PARTENARIATS</h3>
-    <div class="ad-container">
-      <p>Espace réservé à nos partenaires</p>
-    </div>
-  </div>
-</div>
-
-<footer>
-  <div class="container footer-content">
-    <p>&copy; 2025 DIGITAL LABS - Tous droits réservés</p>
-    <p>Contact: <a href="https://wa.me/22665405568">+226 65405568</a> | Email: <a href="mailto:ouorodofiniwatienghislain@gmail.com">ouorodofiniwatienghislain@gmail.com</a></p>
-  </div>
-</footer>
-
-<a href="https://wa.me/22665405568" target="_blank" class="whatsapp-float">
-  <i class="fab fa-whatsapp"></i>
-</a>
-
-<button class="theme-toggle" id="themeToggle">
-  <i class="fas fa-moon"></i>
-</button>
-
-<script>
-  // Menu Burger Fonctionnel
-  const burger = document.querySelector('.burger');
-  const navLinks = document.querySelector('.nav-links');
-  const navItems = document.querySelectorAll('.nav-links li');
-  
-  burger.addEventListener('click', () => {
-    // Animation du burger
-    burger.classList.toggle('toggle');
-    
-    // Affichage du menu
-    navLinks.classList.toggle('active');
-  });
-  
-  // Fermer le menu quand on clique sur un lien
-  navItems.forEach(item => {
-    item.addEventListener('click', () => {
-      navLinks.classList.remove('active');
-      burger.classList.remove('toggle');
-    });
-  });
-  
-  // Gestion du mode jour/nuit
-  const themeToggle = document.getElementById('themeToggle');
-  const icon = themeToggle.querySelector('i');
-  
-  // Vérifier le mode stocké dans localStorage
-  const currentTheme = localStorage.getItem('theme');
-  if (currentTheme === 'light') {
-    document.body.classList.add('light-mode');
-    icon.classList.remove('fa-moon');
-    icon.classList.add('fa-sun');
-  }
-  
-  // Basculer entre les modes
-  themeToggle.addEventListener('click', () => {
-    document.body.classList.toggle('light-mode');
-    
-    if (document.body.classList.contains('light-mode')) {
-      icon.classList.remove('fa-moon');
-      icon.classList.add('fa-sun');
-      localStorage.setItem('theme', 'light');
-    } else {
-      icon.classList.remove('fa-sun');
-      icon.classList.add('fa-moon');
-      localStorage.setItem('theme', 'dark');
+    .section-title h2::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 4px;
+      background: var(--gradient);
+      border-radius: 2px;
     }
-  });
-  
-  // Marquer le lien actif dans la navigation
-  const currentPage = window.location.pathname.split('/').pop();
-  const navLinksAll = document.querySelectorAll('.nav-links a');
-  
-  navLinksAll.forEach(link => {
-    if (link.getAttribute('href') === currentPage) {
-      link.classList.add('active');
-    } else {
-      link.classList.remove('active');
-    }
-  });
-  
-  // Statistiques des visiteurs
-  document.addEventListener('DOMContentLoaded', function() {
-    let visitsData = JSON.parse(localStorage.getItem('visitsData')) || {
-      totalVisits: 0,
-      onlineVisitors: 0,
-      lastVisit: null,
-      visitorId: null
-    };
-    
-    if (!visitsData.visitorId) {
-      visitsData.visitorId = 'visitor-' + Math.random().toString(36).substr(2, 9);
-    }
-    
-    const now = new Date().getTime();
-    const isNewVisit = !visitsData.lastVisit || (now - visitsData.lastVisit) > 30000;
-    
-    if (isNewVisit) {
-      visitsData.totalVisits += 1;
-      visitsData.onlineVisitors += 1;
-      visitsData.lastVisit = now;
-    }
-    
-    localStorage.setItem('visitsData', JSON.stringify(visitsData));
-    
-    document.getElementById('totalVisits').textContent = visitsData.totalVisits;
-    document.getElementById('onlineVisitors').textContent = visitsData.onlineVisitors;
-    
-    window.addEventListener('beforeunload', function() {
-      let visitsData = JSON.parse(localStorage.getItem('visitsData')) || {
-        onlineVisitors: 0
-      };
-      
-      if (visitsData.onlineVisitors > 0) {
-        visitsData.onlineVisitors -= 1;
-        localStorage.setItem('visitsData', JSON.stringify(visitsData));
-      }
-    });
-    
-    setInterval(function() {
-      let visitsData = JSON.parse(localStorage.getItem('visitsData')) || {
-        onlineVisitors: 0
-      };
-      document.getElementById('onlineVisitors').textContent = visitsData.onlineVisitors;
-    }, 30000);
-  });
-  
-  // Gestion des publicités (exemple)
-  document.addEventListener('DOMContentLoaded', function() {
-    // Vous pourriez charger des publicités dynamiquement ici
-    // fetch('https://votre-api.com/publicites')
-    //   .then(response => response.json())
-    //   .then(data => {
-    //     const adContainers = document.querySelectorAll('.ad-container');
-    //     adContainers.forEach((container, index) => {
-    //       if (data[index]) {
-    //         container.innerHTML = `<a href="${data[index].url}" target="_blank"><img src="${data[index].image}" alt="${data[index].alt}"></a>`;
-    //       }
-    //     });
-    //   });
-  });
-</script>
-</body>
-  </html>
+
+    .section-title p {
+      max-width: 700px;
+      margin
