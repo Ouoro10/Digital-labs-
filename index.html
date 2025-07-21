@@ -4,21 +4,16 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description" content="DIGITAL LABS - Solutions digitales premium au Burkina Faso : développement web, infographie, cybersécurité et assistance informatique.">
-  <meta name="keywords" content="développement web, Burkina Faso, site internet, infographie, cybersécurité, assistance informatique">
-  <meta name="author" content="DIGITAL LABS">
   <title>DIGITAL LABS | Solutions Digitales Haut de Gamme - Burkina Faso</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css">
   <style>
     :root {
-      --primary: #0066CC;  /* Bleu professionnel */
+      --primary: #0066CC;
       --primary-dark: #004C99;
-      --secondary: #00C1DE; /* Bleu turquoise moderne */
-      --accent: #FF6B00;   /* Orange vif pour les CTA */
-      --dark: #0A192F;     /* Bleu marine foncé */
+      --secondary: #00C1DE;
+      --accent: #FF6B00;
+      --dark: #0A192F;
       --light: #F8F9FA;
       --text-color: #2D3748;
       --text-light: #FFFFFF;
@@ -27,7 +22,7 @@
       --gradient: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
       --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
       --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.15);
-      --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+      --transition: all 0.3s ease;
     }
 
     * {
@@ -42,7 +37,6 @@
       color: var(--text-color);
       background-color: var(--light);
       overflow-x: hidden;
-      scroll-behavior: smooth;
     }
 
     h1, h2, h3, h4 {
@@ -51,7 +45,7 @@
       line-height: 1.2;
     }
 
-    /* Header moderne avec animation */
+    /* Header */
     header {
       background: var(--header-bg);
       display: flex;
@@ -64,12 +58,6 @@
       z-index: 1000;
       box-shadow: var(--shadow);
       transition: var(--transition);
-      backdrop-filter: blur(10px);
-    }
-
-    header.scrolled {
-      padding: 0.8rem 5%;
-      background: rgba(10, 25, 47, 0.98);
     }
 
     .logo-section {
@@ -80,7 +68,6 @@
 
     .logo-section img {
       height: 2.5rem;
-      transition: var(--transition);
     }
 
     .logo-section span {
@@ -93,7 +80,7 @@
       -webkit-text-fill-color: transparent;
     }
 
-    /* Navigation moderne */
+    /* Navigation */
     nav ul {
       display: flex;
       list-style: none;
@@ -121,13 +108,8 @@
       transition: var(--transition);
     }
 
-    nav ul li a:hover::after,
-    nav ul li a.active::after {
+    nav ul li a:hover::after {
       width: 100%;
-    }
-
-    nav ul li a:hover {
-      color: var(--secondary);
     }
 
     .mobile-menu-btn {
@@ -139,7 +121,7 @@
       cursor: pointer;
     }
 
-    /* Hero section avec animation */
+    /* Hero Section */
     .hero-section {
       height: 100vh;
       min-height: 800px;
@@ -151,31 +133,17 @@
       position: relative;
       overflow: hidden;
       color: var(--text-light);
-    }
-
-    .hero-section::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(135deg, rgba(0, 102, 204, 0.85) 0%, rgba(0, 193, 222, 0.9) 100%),
+      background: linear-gradient(135deg, rgba(0, 102, 204, 0.85) 0%, rgba(0, 193, 222, 0.9) 100%), 
                   url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80') center/cover no-repeat;
-      z-index: -1;
     }
 
     .hero-content {
       max-width: 700px;
-      transform: translateY(20px);
-      opacity: 0;
-      animation: fadeInUp 1s ease forwards 0.3s;
     }
 
     .hero-section h1 {
-      font-size: 3.5rem;
+      font-size: 3rem;
       margin-bottom: 1.5rem;
-      line-height: 1.1;
     }
 
     .hero-section p {
@@ -207,24 +175,9 @@
       background: transparent;
       color: var(--accent);
       transform: translateY(-3px);
-      box-shadow: var(--shadow-lg);
     }
 
-    .btn-secondary {
-      background: transparent;
-      color: var(--text-light);
-      border: 2px solid var(--text-light);
-      margin-left: 1rem;
-    }
-
-    .btn-secondary:hover {
-      background: var(--text-light);
-      color: var(--primary);
-      transform: translateY(-3px);
-      box-shadow: var(--shadow-lg);
-    }
-
-    /* Section Services moderne */
+    /* Sections */
     .section {
       padding: 6rem 5%;
       position: relative;
@@ -238,22 +191,226 @@
     .section-title h2 {
       font-size: 2.5rem;
       margin-bottom: 1rem;
-      position: relative;
-      display: inline-block;
     }
 
-    .section-title h2::after {
-      content: '';
-      position: absolute;
-      bottom: -10px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 80px;
-      height: 4px;
-      background: var(--gradient);
-      border-radius: 2px;
+    /* Services */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
     }
 
-    .section-title p {
-      max-width: 700px;
-      margin
+    .service-card {
+      background: var(--card-bg);
+      border-radius: 12px;
+      padding: 2.5rem 2rem;
+      text-align: center;
+      transition: var(--transition);
+      box-shadow: var(--shadow);
+    }
+
+    .service-card:hover {
+      transform: translateY(-10px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .service-icon {
+      font-size: 3rem;
+      margin-bottom: 1.5rem;
+      color: var(--primary);
+    }
+
+    /* Footer */
+    footer {
+      background: var(--dark);
+      color: var(--text-light);
+      padding: 4rem 5% 2rem;
+    }
+
+    .footer-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 3rem;
+      margin-bottom: 3rem;
+    }
+
+    /* WhatsApp Float */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      background: #25D366;
+      color: white;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      z-index: 999;
+      box-shadow: var(--shadow-lg);
+      transition: var(--transition);
+    }
+
+    .whatsapp-float:hover {
+      transform: scale(1.1);
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      nav {
+        position: fixed;
+        top: 80px;
+        left: -100%;
+        width: 80%;
+        height: calc(100vh - 80px);
+        background: var(--header-bg);
+        flex-direction: column;
+        padding: 2rem;
+        transition: var(--transition);
+      }
+
+      nav.active {
+        left: 0;
+      }
+
+      nav ul {
+        flex-direction: column;
+      }
+
+      .mobile-menu-btn {
+        display: block;
+      }
+
+      .hero-section {
+        text-align: center;
+        align-items: center;
+      }
+
+      .hero-section h1 {
+        font-size: 2.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header id="header">
+    <div class="logo-section">
+      <img src="logo-digital-labs.png" alt="Logo DIGITAL LABS">
+      <span>DIGITAL LABS</span>
+    </div>
+    <nav id="nav">
+      <ul>
+        <li><a href="#home" class="active">Accueil</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <button class="mobile-menu-btn" id="mobileMenuBtn">
+      <i class="fas fa-bars"></i>
+    </button>
+  </header>
+
+  <section class="hero-section" id="home">
+    <div class="hero-content">
+      <h1>Solutions Digitales Premium au Burkina Faso</h1>
+      <p>Développement Web, Infographie, Réseaux, Assistance Informatique, Sécurité Numérique</p>
+      <a href="#contact" class="btn btn-primary">Demander un Devis</a>
+    </div>
+  </section>
+
+  <section class="section" id="services">
+    <div class="section-title">
+      <h2>Nos Services</h2>
+      <p>Nous accompagnons la transformation digitale des entreprises avec des solutions modernes.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon">
+          <i class="fas fa-code"></i>
+        </div>
+        <h3>Développement Web</h3>
+        <p>Sites vitrines, e-commerce et applications web sur mesure.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">
+          <i class="fas fa-paint-brush"></i>
+        </div>
+        <h3>Design Graphique</h3>
+        <p>Création d'identité visuelle et supports marketing.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">
+          <i class="fas fa-shield-alt"></i>
+        </div>
+        <h3>Sécurité Informatique</h3>
+        <p>Protection des données et solutions de cybersécurité.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="contact">
+    <div class="section-title">
+      <h2>Contactez-Nous</h2>
+      <p>Prêt à démarrer votre projet? Contactez notre équipe.</p>
+    </div>
+    <div style="text-align: center;">
+      <a href="mailto:contact@digital-labs.bf" class="btn btn-primary">Envoyer un Email</a>
+      <a href="https://wa.me/22665405568" class="btn btn-primary" style="margin-left: 1rem;">WhatsApp</a>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-container">
+      <div>
+        <h3>DIGITAL LABS</h3>
+        <p>Solutions digitales innovantes pour votre entreprise.</p>
+      </div>
+      <div>
+        <h3>Contact</h3>
+        <p>Email: contact@digital-labs.bf</p>
+        <p>Téléphone: +226 65 40 55 68</p>
+      </div>
+    </div>
+    <div style="text-align: center; padding-top: 2rem;">
+      <p>&copy; 2025 DIGITAL LABS. Tous droits réservés.</p>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/22665405568" class="whatsapp-float" target="_blank">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <script>
+    // Menu mobile
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const nav = document.getElementById('nav');
+    
+    mobileMenuBtn.addEventListener('click', () => {
+      nav.classList.toggle('active');
+      mobileMenuBtn.innerHTML = nav.classList.contains('active') 
+        ? '<i class="fas fa-times"></i>' 
+        : '<i class="fas fa-bars"></i>';
+    });
+
+    // Fermer le menu quand on clique sur un lien
+    document.querySelectorAll('#nav a').forEach(link => {
+      link.addEventListener('click', () => {
+        nav.classList.remove('active');
+        mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+      });
+    });
+
+    // Header au scroll
+    window.addEventListener('scroll', () => {
+      const header = document.getElementById('header');
+      if (window.scrollY > 50) {
+        header.style.padding = '0.8rem 5%';
+      } else {
+        header.style.padding = '1rem 5%';
+      }
+    });
+  </script>
+</body>
+  </html>
