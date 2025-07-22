@@ -1,416 +1,127 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="DIGITAL LABS - Solutions digitales premium au Burkina Faso : développement web, infographie, cybersécurité et assistance informatique.">
-  <title>DIGITAL LABS | Solutions Digitales Haut de Gamme - Burkina Faso</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="DIGITAL LABS - Agence digitale leader au Burkina Faso offrant des solutions web, design et marketing sur mesure.">
+  <title>DIGITAL LABS | Agence Digitale Burkina Faso</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <style>
-    :root {
-      --primary: #0066CC;
-      --primary-dark: #004C99;
-      --secondary: #00C1DE;
-      --accent: #FF6B00;
-      --dark: #0A192F;
-      --light: #F8F9FA;
-      --text-color: #2D3748;
-      --text-light: #FFFFFF;
-      --header-bg: rgba(10, 25, 47, 0.95);
-      --card-bg: #FFFFFF;
-      --gradient: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
-      --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.15);
-      --transition: all 0.3s ease;
-    }
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: 'Poppins', sans-serif;
-      line-height: 1.6;
-      color: var(--text-color);
-      background-color: var(--light);
-      overflow-x: hidden;
-    }
-
-    h1, h2, h3, h4 {
-      font-family: 'Montserrat', sans-serif;
-      font-weight: 700;
-      line-height: 1.2;
-    }
-
-    /* Header */
-    header {
-      background: var(--header-bg);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1rem 5%;
-      position: fixed;
-      top: 0;
-      width: 100%;
-      z-index: 1000;
-      box-shadow: var(--shadow);
-      transition: var(--transition);
-    }
-
-    .logo-section {
-      display: flex;
-      align-items: center;
-      gap: 0.8rem;
-    }
-
-    .logo-section img {
-      height: 2.5rem;
-    }
-
-    .logo-section span {
-      font-size: 1.5rem;
-      font-weight: 700;
-      color: var(--text-light);
-      background: var(--gradient);
-      -webkit-background-clip: text;
-      background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-
-    /* Navigation */
-    nav ul {
-      display: flex;
-      list-style: none;
-      gap: 2rem;
-    }
-
-    nav ul li a {
-      color: var(--text-light);
-      text-decoration: none;
-      font-weight: 500;
-      font-size: 1rem;
-      position: relative;
-      padding: 0.5rem 0;
-      transition: var(--transition);
-    }
-
-    nav ul li a::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 0;
-      height: 2px;
-      background: var(--secondary);
-      transition: var(--transition);
-    }
-
-    nav ul li a:hover::after {
-      width: 100%;
-    }
-
-    .mobile-menu-btn {
-      display: none;
-      background: none;
-      border: none;
-      color: var(--text-light);
-      font-size: 1.5rem;
-      cursor: pointer;
-    }
-
-    /* Hero Section */
-    .hero-section {
-      height: 100vh;
-      min-height: 800px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: flex-start;
-      padding: 0 5%;
-      position: relative;
-      overflow: hidden;
-      color: var(--text-light);
-      background: linear-gradient(135deg, rgba(0, 102, 204, 0.85) 0%, rgba(0, 193, 222, 0.9) 100%), 
-                  url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80') center/cover no-repeat;
-    }
-
-    .hero-content {
-      max-width: 700px;
-    }
-
-    .hero-section h1 {
-      font-size: 3rem;
-      margin-bottom: 1.5rem;
-    }
-
-    .hero-section p {
-      font-size: 1.25rem;
-      margin-bottom: 2.5rem;
-      opacity: 0.9;
-    }
-
-    .btn {
-      display: inline-block;
-      padding: 1rem 2.5rem;
-      border-radius: 50px;
-      font-weight: 600;
-      font-size: 1rem;
-      cursor: pointer;
-      transition: var(--transition);
-      text-decoration: none;
-      text-align: center;
-      box-shadow: var(--shadow);
-    }
-
-    .btn-primary {
-      background: var(--accent);
-      color: white;
-      border: 2px solid var(--accent);
-    }
-
-    .btn-primary:hover {
-      background: transparent;
-      color: var(--accent);
-      transform: translateY(-3px);
-    }
-
-    /* Sections */
-    .section {
-      padding: 6rem 5%;
-      position: relative;
-    }
-
-    .section-title {
-      text-align: center;
-      margin-bottom: 4rem;
-    }
-
-    .section-title h2 {
-      font-size: 2.5rem;
-      margin-bottom: 1rem;
-    }
-
-    /* Services */
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 2rem;
-    }
-
-    .service-card {
-      background: var(--card-bg);
-      border-radius: 12px;
-      padding: 2.5rem 2rem;
-      text-align: center;
-      transition: var(--transition);
-      box-shadow: var(--shadow);
-    }
-
-    .service-card:hover {
-      transform: translateY(-10px);
-      box-shadow: var(--shadow-lg);
-    }
-
-    .service-icon {
-      font-size: 3rem;
-      margin-bottom: 1.5rem;
-      color: var(--primary);
-    }
-
-    /* Footer */
-    footer {
-      background: var(--dark);
-      color: var(--text-light);
-      padding: 4rem 5% 2rem;
-    }
-
-    .footer-container {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 3rem;
-      margin-bottom: 3rem;
-    }
-
-    /* WhatsApp Float */
-    .whatsapp-float {
-      position: fixed;
-      bottom: 2rem;
-      right: 2rem;
-      background: #25D366;
-      color: white;
-      width: 60px;
-      height: 60px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.5rem;
-      z-index: 999;
-      box-shadow: var(--shadow-lg);
-      transition: var(--transition);
-    }
-
-    .whatsapp-float:hover {
-      transform: scale(1.1);
-    }
-
-    /* Responsive */
-    @media (max-width: 768px) {
-      nav {
-        position: fixed;
-        top: 80px;
-        left: -100%;
-        width: 80%;
-        height: calc(100vh - 80px);
-        background: var(--header-bg);
-        flex-direction: column;
-        padding: 2rem;
-        transition: var(--transition);
-      }
-
-      nav.active {
-        left: 0;
-      }
-
-      nav ul {
-        flex-direction: column;
-      }
-
-      .mobile-menu-btn {
-        display: block;
-      }
-
-      .hero-section {
-        text-align: center;
-        align-items: center;
-      }
-
-      .hero-section h1 {
-        font-size: 2.2rem;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="icon" href="assets/images/logo.png" type="image/png">
 </head>
 <body>
-  <header id="header">
-    <div class="logo-section">
-      <img src="logo-digital-labs.png" alt="Logo DIGITAL LABS">
-      <span>DIGITAL LABS</span>
+  <!-- Header -->
+  <header class="header">
+    <div class="container">
+      <a href="index.html" class="logo">
+        <img src="assets/images/logo.png" alt="Digital Labs Logo" width="180">
+      </a>
+      
+      <nav class="navbar">
+        <ul class="nav-menu">
+          <li class="nav-item"><a href="index.html" class="nav-link active">Accueil</a></li>
+          <li class="nav-item"><a href="about.html" class="nav-link">À propos</a></li>
+          <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+      
+      <div class="hamburger">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
     </div>
-    <nav id="nav">
-      <ul>
-        <li><a href="#home" class="active">Accueil</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
-    <button class="mobile-menu-btn" id="mobileMenuBtn">
-      <i class="fas fa-bars"></i>
-    </button>
   </header>
 
-  <section class="hero-section" id="home">
-    <div class="hero-content">
-      <h1>Solutions Digitales Premium au Burkina Faso</h1>
-      <p>Développement Web, Infographie, Réseaux, Assistance Informatique, Sécurité Numérique</p>
-      <a href="#contact" class="btn btn-primary">Demander un Devis</a>
-    </div>
-  </section>
-
-  <section class="section" id="services">
-    <div class="section-title">
-      <h2>Nos Services</h2>
-      <p>Nous accompagnons la transformation digitale des entreprises avec des solutions modernes.</p>
-    </div>
-    <div class="services-grid">
-      <div class="service-card">
-        <div class="service-icon">
-          <i class="fas fa-code"></i>
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <h1>Solutions Digitales Innovantes</h1>
+        <p>Nous transformons vos idées en réalités digitales avec des solutions sur mesure</p>
+        <div class="cta-buttons">
+          <a href="contact.html" class="btn btn-primary">Demander un devis</a>
+          <a href="about.html" class="btn btn-secondary">Découvrir notre agence</a>
         </div>
-        <h3>Développement Web</h3>
-        <p>Sites vitrines, e-commerce et applications web sur mesure.</p>
-      </div>
-      <div class="service-card">
-        <div class="service-icon">
-          <i class="fas fa-paint-brush"></i>
-        </div>
-        <h3>Design Graphique</h3>
-        <p>Création d'identité visuelle et supports marketing.</p>
-      </div>
-      <div class="service-card">
-        <div class="service-icon">
-          <i class="fas fa-shield-alt"></i>
-        </div>
-        <h3>Sécurité Informatique</h3>
-        <p>Protection des données et solutions de cybersécurité.</p>
       </div>
     </div>
   </section>
 
-  <section class="section" id="contact">
-    <div class="section-title">
-      <h2>Contactez-Nous</h2>
-      <p>Prêt à démarrer votre projet? Contactez notre équipe.</p>
-    </div>
-    <div style="text-align: center;">
-      <a href="mailto:contact@digital-labs.bf" class="btn btn-primary">Envoyer un Email</a>
-      <a href="https://wa.me/22665405568" class="btn btn-primary" style="margin-left: 1rem;">WhatsApp</a>
+  <!-- Services Section -->
+  <section class="services">
+    <div class="container">
+      <div class="section-header">
+        <h2>Nos Services Premium</h2>
+        <p>Des solutions complètes pour votre présence digitale</p>
+      </div>
+      
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-code"></i>
+          </div>
+          <h3>Développement Web</h3>
+          <p>Sites vitrines, e-commerce et applications web sur mesure avec les dernières technologies.</p>
+        </div>
+        
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-paint-brush"></i>
+          </div>
+          <h3>Design Graphique</h3>
+          <p>Création d'identité visuelle, logos et supports marketing professionnels.</p>
+        </div>
+        
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-chart-line"></i>
+          </div>
+          <h3>Marketing Digital</h3>
+          <p>Stratégies digitales, SEO et campagnes publicitaires performantes.</p>
+        </div>
+      </div>
     </div>
   </section>
 
-  <footer>
-    <div class="footer-container">
-      <div>
-        <h3>DIGITAL LABS</h3>
-        <p>Solutions digitales innovantes pour votre entreprise.</p>
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <img src="assets/images/logo.png" alt="Digital Labs Logo" width="160" class="footer-logo">
+          <p>Leader des solutions digitales au Burkina Faso depuis 2020.</p>
+        </div>
+        
+        <div class="footer-col">
+          <h3>Liens rapides</h3>
+          <ul>
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="about.html">À propos</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-col">
+          <h3>Contact</h3>
+          <ul>
+            <li><i class="fas fa-map-marker-alt"></i> Ouagadougou, Burkina Faso</li>
+            <li><i class="fas fa-phone"></i> +226 65 40 55 68</li>
+            <li><i class="fas fa-envelope"></i> contact@digital-labs.bf</li>
+          </ul>
+        </div>
       </div>
-      <div>
-        <h3>Contact</h3>
-        <p>Email: contact@digital-labs.bf</p>
-        <p>Téléphone: +226 65 40 55 68</p>
+      
+      <div class="footer-bottom">
+        <p>&copy; 2025 DIGITAL LABS. Tous droits réservés.</p>
       </div>
-    </div>
-    <div style="text-align: center; padding-top: 2rem;">
-      <p>&copy; 2025 DIGITAL LABS. Tous droits réservés.</p>
     </div>
   </footer>
 
+  <!-- WhatsApp Float -->
   <a href="https://wa.me/22665405568" class="whatsapp-float" target="_blank">
     <i class="fab fa-whatsapp"></i>
   </a>
 
-  <script>
-    // Menu mobile
-    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-    const nav = document.getElementById('nav');
-    
-    mobileMenuBtn.addEventListener('click', () => {
-      nav.classList.toggle('active');
-      mobileMenuBtn.innerHTML = nav.classList.contains('active') 
-        ? '<i class="fas fa-times"></i>' 
-        : '<i class="fas fa-bars"></i>';
-    });
-
-    // Fermer le menu quand on clique sur un lien
-    document.querySelectorAll('#nav a').forEach(link => {
-      link.addEventListener('click', () => {
-        nav.classList.remove('active');
-        mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
-      });
-    });
-
-    // Header au scroll
-    window.addEventListener('scroll', () => {
-      const header = document.getElementById('header');
-      if (window.scrollY > 50) {
-        header.style.padding = '0.8rem 5%';
-      } else {
-        header.style.padding = '1rem 5%';
-      }
-    });
-  </script>
+  <script src="assets/js/script.js"></script>
 </body>
-  </html>
+        </html>
