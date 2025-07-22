@@ -2,173 +2,253 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Découvrez DIGITAL LABS, entreprise digitale burkinabé spécialisée en développement web, design et solutions IT sur mesure.">
   <title>À propos - DIGITAL LABS | Burkina Faso</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="icon" type="image/png" href="assets/img/favicon.png">
   <style>
     :root {
+      /* Palette optimisée */
       --primary: #4361ee;
+      --primary-dark: #3a56d4;
       --secondary: #3f37c9;
       --accent: #4cc9f0;
+      --accent-light: #6bd7f3;
       --dark: #1a1a2e;
+      --dark-light: #2a2a3e;
       --light: #f8f9fa;
+      --gray: #a1a1aa;
       --whatsapp: #25D366;
+      --whatsapp-dark: #128C7E;
+      
+      /* Dimensions */
+      --header-height: 80px;
+      --container-width: 1200px;
+      --border-radius: 12px;
+      --card-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+      
+      /* Animations */
+      --transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
     }
-    
-    body {
-      font-family: 'Montserrat', sans-serif;
+
+    /* Reset */
+    *, *::before, *::after {
       margin: 0;
       padding: 0;
-      background-color: var(--dark);
-      color: var(--light);
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
       line-height: 1.6;
+      color: var(--light);
+      background-color: var(--dark);
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
     }
-    
-    .container {
-      width: 85%;
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 15px;
-    }
-    
-    /* Header simplifié */
-    header {
-      background: rgba(26, 26, 46, 0.9);
-      backdrop-filter: blur(10px);
-      position: fixed;
-      width: 100%;
-      top: 0;
-      z-index: 1000;
-      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-      padding: 15px 0;
-      text-align: center;
-    }
-    
-    .logo {
+
+    /* Typographie */
+    h1, h2, h3 {
       font-weight: 700;
-      font-size: 1.8rem;
-      background: linear-gradient(90deg, var(--accent), var(--primary));
+      line-height: 1.2;
+      margin-bottom: 1.5rem;
+    }
+
+    h1 { font-size: 2.5rem; }
+    h2 { font-size: 2rem; }
+    
+    p {
+      color: var(--gray);
+      margin-bottom: 1.25rem;
+    }
+
+    /* Layout */
+    .container {
+      width: 100%;
+      max-width: var(--container-width);
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    /* Header */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: var(--header-height);
+      background: rgba(26, 26, 46, 0.98);
+      backdrop-filter: blur(10px);
+      display: flex;
+      align-items: center;
+      z-index: 1000;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .logo {
+      font-size: 1.75rem;
+      font-weight: 700;
+      background: linear-gradient(135deg, var(--accent), var(--primary));
       -webkit-background-clip: text;
       background-clip: text;
       color: transparent;
-      margin: 0;
-      display: inline-block;
+      letter-spacing: 0.5px;
+      text-decoration: none;
     }
-    
-    /* About Section */
+
+    /* Section About */
     .section-padding {
-      padding: 120px 0 80px;
+      padding: calc(var(--header-height) + 2rem) 0 6rem;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      background-image: 
+        radial-gradient(circle at 15% 15%, rgba(67, 97, 238, 0.1) 0%, transparent 45%),
+        radial-gradient(circle at 85% 85%, rgba(76, 201, 240, 0.1) 0%, transparent 45%);
+      background-attachment: fixed;
     }
-    
+
     .about-content {
       display: flex;
       align-items: center;
-      gap: 50px;
+      gap: 4rem;
     }
-    
+
     .about-text {
       flex: 1;
     }
-    
+
     .about-text h2 {
-      font-size: 2.5rem;
-      margin-bottom: 20px;
       color: var(--accent);
+      position: relative;
+      display: inline-block;
     }
-    
-    .about-text p {
-      font-size: 1.1rem;
-      color: rgba(255, 255, 255, 0.8);
-      margin-bottom: 20px;
-      line-height: 1.8;
+
+    .about-text h2::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 0;
+      width: 60px;
+      height: 4px;
+      background: var(--accent);
+      border-radius: 2px;
     }
-    
+
+    .highlight {
+      color: var(--accent-light);
+      font-weight: 500;
+    }
+
     .about-image {
       flex: 1;
       display: flex;
       justify-content: center;
+      position: relative;
     }
-    
+
     .about-image img {
       width: 100%;
-      max-width: 400px;
-      border-radius: 16px;
-      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+      max-width: 450px;
+      border-radius: var(--border-radius);
+      box-shadow: var(--card-shadow);
       border: 1px solid rgba(255, 255, 255, 0.1);
-      transition: transform 0.3s;
+      transition: var(--transition);
     }
-    
+
     .about-image img:hover {
       transform: scale(1.02);
     }
-    
+
     /* Footer */
     footer {
-      background: rgba(26, 26, 46, 0.9);
+      background: rgba(26, 26, 46, 0.95);
       backdrop-filter: blur(10px);
-      padding: 30px 0;
+      padding: 2rem 0;
       text-align: center;
       border-top: 1px solid rgba(255, 255, 255, 0.1);
     }
-    
-    .footer-content p {
-      margin: 10px 0;
-      color: rgba(255, 255, 255, 0.7);
-      font-size: 0.9rem;
+
+    .footer-content {
+      max-width: 600px;
+      margin: 0 auto;
     }
-    
-    .footer-content a {
+
+    .footer-content p {
+      margin-bottom: 0.5rem;
+      font-size: 0.9375rem;
+    }
+
+    .footer-link {
       color: var(--accent);
       text-decoration: none;
-      transition: color 0.3s;
+      transition: var(--transition);
     }
-    
-    .footer-content a:hover {
+
+    .footer-link:hover {
       color: var(--primary);
+      text-decoration: underline;
     }
-    
+
     /* Bouton WhatsApp */
     .whatsapp-float {
       position: fixed;
-      bottom: 30px;
-      right: 30px;
+      bottom: 2rem;
+      right: 2rem;
       width: 60px;
       height: 60px;
       background-color: var(--whatsapp);
       color: white;
       border-radius: 50%;
-      text-align: center;
-      font-size: 30px;
-      box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
-      z-index: 100;
       display: flex;
       align-items: center;
       justify-content: center;
-      transition: all 0.3s;
+      font-size: 1.75rem;
+      z-index: 100;
+      box-shadow: 0 4px 20px rgba(37, 211, 102, 0.3);
+      transition: var(--transition);
+      animation: pulse 2s infinite;
     }
-    
+
     .whatsapp-float:hover {
-      transform: scale(1.1) translateY(-5px);
-      box-shadow: 0 6px 16px rgba(37, 211, 102, 0.4);
+      transform: scale(1.1);
+      animation: none;
     }
-    
+
+    @keyframes pulse {
+      0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+      70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+    }
+
     /* Responsive */
     @media (max-width: 992px) {
       .about-content {
         flex-direction: column;
-        gap: 30px;
+        gap: 3rem;
       }
       
-      .about-text, .about-image {
-        flex: none;
-        width: 100%;
+      .section-padding {
+        padding: calc(var(--header-height) + 1rem) 0 4rem;
       }
       
-      .about-image img {
-        max-width: 300px;
-      }
+      h1 { font-size: 2rem; }
+      h2 { font-size: 1.75rem; }
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .about-content {
+      animation: fadeIn 0.8s ease-out forwards;
     }
   </style>
 </head>
@@ -176,35 +256,49 @@
 
 <header>
   <div class="container">
-    <h1 class="logo">DIGITAL LABS</h1>
+    <a href="index.html" class="logo">DIGITAL LABS</a>
   </div>
 </header>
 
-<section class="section-padding">
-  <div class="container about-content">
-    <div class="about-text">
-      <h2>Qui sommes-nous ?</h2>
-      <p>DIGITAL LABS est une entreprise made in Burkina passionnée par la technologie et l'innovation digitale. Nous accompagnons les entreprises locales dans leur transformation numérique.</p>
-      <p>Notre équipe est composée de professionnels qualifiés en développement web, design graphique, maintenance informatique, instalation de caméra de surveillance, dépannage/assistance & cybersécurité. Nous combinons expertise technique et connaissance approfondie du marché africain pour offrir des solutions adaptées.</p>
-      <p>Nous croyons en un avenir numérique inclusif et dynamique pour le Burkina Faso, où chaque entreprise peut tirer profit des technologies digitales pour croître et prospérer.</p>
+<main>
+  <section class="section-padding">
+    <div class="container about-content">
+      <div class="about-text">
+        <h2>Qui sommes-nous ?</h2>
+        <p><span class="highlight">DIGITAL LABS</span> est une entreprise <span class="highlight">100% burkinabé</span> passionnée par la technologie et l'innovation digitale. Nous accompagnons les entreprises locales dans leur transformation numérique avec des solutions sur mesure.</p>
+        
+        <p>Notre équipe pluridisciplinaire réunit des experts en :</p>
+        <ul style="margin-left: 1.5rem; color: var(--gray);">
+          <li>Développement web & applications mobiles</li>
+          <li>Design graphique & identité visuelle</li>
+          <li>Maintenance et assistance informatique</li>
+          <li>Installation de systèmes de surveillance</li>
+          <li>Solutions de cybersécurité</li>
+        </ul>
+        
+        <p>Nous combinons <span class="highlight">expertise technique</span> et <span class="highlight">connaissance approfondie du marché africain</span> pour proposer des solutions digitales adaptées aux réalités locales.</p>
+        
+        <p>Notre vision : bâtir un <span class="highlight">écosystème numérique inclusif</span> où chaque entreprise burkinabé peut tirer profit des technologies digitales pour croître et prospérer.</p>
+      </div>
+      
+      <div class="about-image">
+        <img src="https://images.pexels.com/photos/3184357/pexels-photo-3184357.jpeg" 
+             alt="Équipe DIGITAL LABS au travail" 
+             loading="lazy">
+      </div>
     </div>
-    <div class="about-image">
-      <img src="https://images.pexels.com/photos/3184357/pexels-photo-3184357.jpeg" 
-           alt="Équipe DIGITAL LABS au travail" 
-           loading="lazy">
-    </div>
-  </div>
-</section>
+  </section>
+</main>
 
 <footer>
   <div class="container footer-content">
+    <p><strong>DIGITAL LABS</strong> - Solutions Digitales Professionnelles</p>
+    <p>CEO: <a href="https://wa.me/22665405568" class="footer-link">Ouoro Dofiniwatien Ghislain (+226 65405568)</a></p>
     <p>&copy; 2025 DIGITAL LABS - Tous droits réservés</p>
-    <p>CEO: <a href="https://wa.me/22665405568">Ouoro Dofiniwatien Ghislain (+226 65405568)</a></p>
   </div>
 </footer>
 
-<!-- Bouton WhatsApp Flottant -->
-<a href="https://wa.me/22665405568" target="_blank" class="whatsapp-float">
+<a href="https://wa.me/22665405568" target="_blank" class="whatsapp-float" aria-label="Contact WhatsApp">
   <i class="fab fa-whatsapp"></i>
 </a>
 
