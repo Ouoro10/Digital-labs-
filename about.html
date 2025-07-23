@@ -1,306 +1,677 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" data-theme="light">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Découvrez DIGITAL LABS, entreprise digitale burkinabé spécialisée en développement web, design et solutions IT sur mesure.">
-  <title>À propos - DIGITAL LABS | Burkina Faso</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link rel="icon" type="image/png" href="assets/img/favicon.png">
-  <style>
-    :root {
-      /* Palette optimisée */
-      --primary: #4361ee;
-      --primary-dark: #3a56d4;
-      --secondary: #3f37c9;
-      --accent: #4cc9f0;
-      --accent-light: #6bd7f3;
-      --dark: #1a1a2e;
-      --dark-light: #2a2a3e;
-      --light: #f8f9fa;
-      --gray: #a1a1aa;
-      --whatsapp: #25D366;
-      --whatsapp-dark: #128C7E;
-      
-      /* Dimensions */
-      --header-height: 80px;
-      --container-width: 1200px;
-      --border-radius: 12px;
-      --card-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
-      
-      /* Animations */
-      --transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nos Compétences | DIGITAL LABS</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #1a56a7;
+            --primary-dark: #0d3a7a;
+            --secondary: #ff6b35;
+            --white: #ffffff;
+            --light: #f8f9fa;
+            --dark: #1e293b;
+            --gray: #64748b;
+            --shadow-sm: 0 2px 8px rgba(0,0,0,0.1);
+            --shadow-md: 0 4px 16px rgba(0,0,0,0.15);
+            --transition: all 0.3s ease;
+            --radius: 8px;
+            --radius-lg: 12px;
+        }
 
-    /* Reset */
-    *, *::before, *::after {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+        /* Reset et Base */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
-    body {
-      font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
-      line-height: 1.6;
-      color: var(--light);
-      background-color: var(--dark);
-      overflow-x: hidden;
-      -webkit-font-smoothing: antialiased;
-    }
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            color: var(--dark);
+            background-color: var(--light);
+            line-height: 1.6;
+        }
 
-    /* Typographie */
-    h1, h2, h3 {
-      font-weight: 700;
-      line-height: 1.2;
-      margin-bottom: 1.5rem;
-    }
+        img {
+            max-width: 100%;
+            height: auto;
+        }
 
-    h1 { font-size: 2.5rem; }
-    h2 { font-size: 2rem; }
-    
-    p {
-      color: var(--gray);
-      margin-bottom: 1.25rem;
-    }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
 
-    /* Layout */
-    .container {
-      width: 100%;
-      max-width: var(--container-width);
-      margin: 0 auto;
-      padding: 0 1.5rem;
-    }
+        section {
+            padding: 5rem 0;
+        }
 
-    /* Header */
-    header {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: var(--header-height);
-      background: rgba(26, 26, 46, 0.98);
-      backdrop-filter: blur(10px);
-      display: flex;
-      align-items: center;
-      z-index: 1000;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-    }
+        h1, h2, h3, h4 {
+            line-height: 1.2;
+            font-weight: 700;
+        }
 
-    .logo {
-      font-size: 1.75rem;
-      font-weight: 700;
-      background: linear-gradient(135deg, var(--accent), var(--primary));
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-      letter-spacing: 0.5px;
-      text-decoration: none;
-    }
+        /* Navigation */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255,255,255,0.98);
+            box-shadow: var(--shadow-sm);
+            z-index: 1000;
+            padding: 1rem 0;
+        }
 
-    /* Section About */
-    .section-padding {
-      padding: calc(var(--header-height) + 2rem) 0 6rem;
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      background-image: 
-        radial-gradient(circle at 15% 15%, rgba(67, 97, 238, 0.1) 0%, transparent 45%),
-        radial-gradient(circle at 85% 85%, rgba(76, 201, 240, 0.1) 0%, transparent 45%);
-      background-attachment: fixed;
-    }
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
 
-    .about-content {
-      display: flex;
-      align-items: center;
-      gap: 4rem;
-    }
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+        }
 
-    .about-text {
-      flex: 1;
-    }
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
 
-    .about-text h2 {
-      color: var(--accent);
-      position: relative;
-      display: inline-block;
-    }
+        .nav-links a {
+            color: var(--gray);
+            font-weight: 600;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: var(--transition);
+        }
 
-    .about-text h2::after {
-      content: '';
-      position: absolute;
-      bottom: -10px;
-      left: 0;
-      width: 60px;
-      height: 4px;
-      background: var(--accent);
-      border-radius: 2px;
-    }
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--primary);
+        }
 
-    .highlight {
-      color: var(--accent-light);
-      font-weight: 500;
-    }
+        .hamburger {
+            display: none;
+            cursor: pointer;
+        }
 
-    .about-image {
-      flex: 1;
-      display: flex;
-      justify-content: center;
-      position: relative;
-    }
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: var(--white);
+            text-align: center;
+            padding: 10rem 0 6rem;
+            margin-top: 80px;
+            position: relative;
+        }
 
-    .about-image img {
-      width: 100%;
-      max-width: 450px;
-      border-radius: var(--border-radius);
-      box-shadow: var(--card-shadow);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      transition: var(--transition);
-    }
+        .hero h1 {
+            font-size: 2.8rem;
+            margin-bottom: 1.5rem;
+        }
 
-    .about-image img:hover {
-      transform: scale(1.02);
-    }
+        .hero h1 span {
+            color: var(--secondary);
+        }
 
-    /* Footer */
-    footer {
-      background: rgba(26, 26, 46, 0.95);
-      backdrop-filter: blur(10px);
-      padding: 2rem 0;
-      text-align: center;
-      border-top: 1px solid rgba(255, 255, 255, 0.1);
-    }
+        .hero p {
+            font-size: 1.25rem;
+            max-width: 700px;
+            margin: 0 auto;
+            opacity: 0.9;
+        }
 
-    .footer-content {
-      max-width: 600px;
-      margin: 0 auto;
-    }
+        /* Team Section */
+        .team-section {
+            text-align: center;
+        }
 
-    .footer-content p {
-      margin-bottom: 0.5rem;
-      font-size: 0.9375rem;
-    }
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
 
-    .footer-link {
-      color: var(--accent);
-      text-decoration: none;
-      transition: var(--transition);
-    }
+        .section-subtitle {
+            color: var(--gray);
+            margin-bottom: 3rem;
+        }
 
-    .footer-link:hover {
-      color: var(--primary);
-      text-decoration: underline;
-    }
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
 
-    /* Bouton WhatsApp */
-    .whatsapp-float {
-      position: fixed;
-      bottom: 2rem;
-      right: 2rem;
-      width: 60px;
-      height: 60px;
-      background-color: var(--whatsapp);
-      color: white;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.75rem;
-      z-index: 100;
-      box-shadow: 0 4px 20px rgba(37, 211, 102, 0.3);
-      transition: var(--transition);
-      animation: pulse 2s infinite;
-    }
+        .team-card {
+            background: var(--white);
+            border-radius: var(--radius-lg);
+            padding: 2rem;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+            text-align: center;
+        }
 
-    .whatsapp-float:hover {
-      transform: scale(1.1);
-      animation: none;
-    }
+        .team-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+        }
 
-    @keyframes pulse {
-      0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
-      70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
-      100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
-    }
+        .service-icon {
+            font-size: 3.5rem;
+            color: var(--primary);
+            margin: 0 auto 1.5rem;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background: var(--light);
+            display: grid;
+            place-items: center;
+            border: 5px solid var(--white);
+        }
 
-    /* Responsive */
-    @media (max-width: 992px) {
-      .about-content {
-        flex-direction: column;
-        gap: 3rem;
-      }
-      
-      .section-padding {
-        padding: calc(var(--header-height) + 1rem) 0 4rem;
-      }
-      
-      h1 { font-size: 2rem; }
-      h2 { font-size: 1.75rem; }
-    }
+        .team-name {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
 
-    /* Animations */
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
+        .team-role {
+            color: var(--secondary);
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
 
-    .about-content {
-      animation: fadeIn 0.8s ease-out forwards;
-    }
-  </style>
+        .service-details {
+            text-align: left;
+            margin-top: 1.5rem;
+        }
+
+        .service-details ul {
+            list-style-type: none;
+        }
+
+        .service-details li {
+            margin-bottom: 0.5rem;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        .service-details li::before {
+            content: "•";
+            color: var(--secondary);
+            font-size: 1.5rem;
+            position: absolute;
+            left: 0;
+            top: -3px;
+        }
+
+        /* Stats Section */
+        .stats-section {
+            background: var(--primary);
+            color: var(--white);
+            text-align: center;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+
+        .stat-item {
+            padding: 2rem;
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        /* Values Section */
+        .values-section {
+            text-align: center;
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .value-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+        }
+
+        .value-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .value-icon {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: var(--white);
+            text-align: center;
+            padding: 5rem 0;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            margin-top: 2rem;
+        }
+
+        .btn {
+            padding: 0.8rem 2rem;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .btn-primary {
+            background: var(--secondary);
+            color: var(--white);
+        }
+
+        .btn-primary:hover {
+            background: var(--white);
+            color: var(--secondary);
+        }
+
+        .btn-outline {
+            border: 2px solid var(--white);
+            color: var(--white);
+        }
+
+        .btn-outline:hover {
+            background: var(--white);
+            color: var(--primary);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: var(--white);
+            padding: 4rem 0 2rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-col h3 {
+            font-size: 1.25rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+        }
+
+        .footer-col h3::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 40px;
+            height: 3px;
+            background: var(--secondary);
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 1rem;
+        }
+
+        .footer-links a {
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: var(--white);
+            padding-left: 5px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.1);
+            display: grid;
+            place-items: center;
+            color: var(--white);
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            background: var(--secondary);
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            section {
+                padding: 4rem 0;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hamburger {
+                display: block;
+            }
+
+            .hero {
+                padding: 8rem 0 4rem;
+            }
+
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .container {
+                padding: 0 1.5rem;
+            }
+
+            section {
+                padding: 3rem 0;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+    </style>
 </head>
 <body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">DIGITAL LABS</a>
+            
+            <div class="nav-links">
+                <a href="index.html"><i class="fas fa-home"></i> Accueil</a>
+                <a href="services.html"><i class="fas fa-cogs"></i> Services</a>
+                <a href="about.html" class="active"><i class="fas fa-users"></i> Compétences</a>
+                <a href="contact.html"><i class="fas fa-paper-plane"></i> Contact</a>
+            </div>
+            
+            <div class="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
 
-<header>
-  <div class="container">
-    <a href="index.html" class="logo">DIGITAL LABS</a>
-  </div>
-</header>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Nos <span>compétences</span> techniques</h1>
+            <p>Des solutions complètes pour répondre à tous vos besoins numériques</p>
+        </div>
+    </section>
 
-<main>
-  <section class="section-padding">
-    <div class="container about-content">
-      <div class="about-text">
-        <h2>Qui sommes-nous ?</h2>
-        <p><span class="highlight">DIGITAL LABS</span> est une entreprise <span class="highlight">100% burkinabé</span> passionnée par la technologie et l'innovation digitale. Nous accompagnons les entreprises locales dans leur transformation numérique avec des solutions sur mesure.</p>
+    <!-- Team Section -->
+    <section class="team-section container">
+        <h2 class="section-title">Nos Domaines d'Expertise</h2>
+        <p class="section-subtitle">Découvrez l'étendue de nos compétences</p>
         
-        <p>Notre équipe pluridisciplinaire réunit des experts en :</p>
-        <ul style="margin-left: 1.5rem; color: var(--gray);">
-          <li>Développement web & applications mobiles</li>
-          <li>Design graphique & identité visuelle</li>
-          <li>Maintenance et assistance informatique</li>
-          <li>Installation de systèmes de surveillance</li>
-          <li>Solutions de cybersécurité</li>
-        </ul>
+        <div class="team-grid">
+            <div class="team-card">
+                <div class="service-icon">
+                    <i class="fas fa-server"></i>
+                </div>
+                <h3 class="team-name">Maintenance Informatique</h3>
+                <p class="team-role">Support technique complet</p>
+                <div class="service-details">
+                    <ul>
+                        <li>Maintenance préventive (contrôles réguliers)</li>
+                        <li>Maintenance corrective (dépannage)</li>
+                        <li>Maintenance évolutive (mises à jour)</li>
+                        <li>Maintenance adaptative (nouveaux usages)</li>
+                        <li>Support technique à distance</li>
+                        <li>Gestion de parc informatique</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="team-card">
+                <div class="service-icon">
+                    <i class="fas fa-code"></i>
+                </div>
+                <h3 class="team-name">Développement Web</h3>
+                <p class="team-role">Solutions sur mesure</p>
+                <div class="service-details">
+                    <ul>
+                        <li>Sites vitrines et institutionnels</li>
+                        <li>Applications web complexes</li>
+                        <li>E-commerce et solutions de paiement</li>
+                        <li>Intégration CMS (WordPress, Drupal)</li>
+                        <li>Développement d'API</li>
+                        <li>Applications progressives (PWA)</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="team-card">
+                <div class="service-icon">
+                    <i class="fas fa-paint-brush"></i>
+                </div>
+                <h3 class="team-name">Conception Graphique</h3>
+                <p class="team-role">Identité visuelle impactante</p>
+                <div class="service-details">
+                    <ul>
+                        <li>Création de logos et chartes graphiques</li>
+                        <li>Design d'affiches et supports print</li>
+                        <li>Présentations commerciales</li>
+                        <li>Publicités et bannières</li>
+                        <li>Packaging et merchandising</li>
+                        <li>Illustrations et infographies</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section">
+        <div class="container">
+            <h2 class="section-title">Notre Impact</h2>
+            
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-number">50+</div>
+                    <div class="stat-label">Projets réalisés</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">100%</div>
+                    <div class="stat-label">Satisfaction client</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">3</div>
+                    <div class="stat-label">Experts techniques</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">3</div>
+                    <div class="stat-label">Années d'expérience</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Values Section -->
+    <section class="values-section container">
+        <h2 class="section-title">Nos Valeurs</h2>
+        <p class="section-subtitle">Ce qui nous guide au quotidien</p>
         
-        <p>Nous combinons <span class="highlight">expertise technique</span> et <span class="highlight">connaissance approfondie du marché africain</span> pour proposer des solutions digitales adaptées aux réalités locales.</p>
+        <div class="values-grid">
+            <div class="value-card">
+                <div class="value-icon"><i class="fas fa-lightbulb"></i></div>
+                <h3>Innovation</h3>
+                <p>Nous repoussons constamment les limites pour offrir des solutions avant-gardistes.</p>
+            </div>
+            
+            <div class="value-card">
+                <div class="value-icon"><i class="fas fa-handshake"></i></div>
+                <h3>Transparence</h3>
+                <p>Une communication claire et honnête à chaque étape de votre projet.</p>
+            </div>
+            
+            <div class="value-card">
+                <div class="value-icon"><i class="fas fa-heart"></i></div>
+                <h3>Passion</h3>
+                <p>Nous mettons tout notre cœur dans chaque réalisation.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Prêt à collaborer avec notre équipe ?</h2>
+            <p>Contactez-nous pour discuter de votre projet</p>
+            
+            <div class="cta-buttons">
+                <a href="contact.html" class="btn btn-primary"><i class="fas fa-paper-plane"></i> Nous contacter</a>
+                <a href="tel:+22665405568" class="btn btn-outline"><i class="fas fa-phone-alt"></i> +226 65405568</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>DIGITAL LABS</h3>
+                    <p>L'innovation digitale au service de votre réussite.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Navigation</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Accueil</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="about.html">Nos compétences</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Services</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Maintenance Informatique</a></li>
+                        <li><a href="#">Développement Web</a></li>
+                        <li><a href="#">Conception Graphique</a></li>
+                        <li><a href="#">Marketing Digital</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Contact</h3>
+                    <ul class="footer-links">
+                        <li><a href="tel:+22665405568"><i class="fas fa-phone-alt"></i> +226 65405568</a></li>
+                        <li><a href="mailto:contact@digitallabs.bf"><i class="fas fa-envelope"></i> contact@digitallabs.bf</a></li>
+                        <li><a href="#"><i class="fas fa-map-marker-alt"></i> Koudougou, Secteur 10</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 DIGITAL LABS. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Menu mobile
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
         
-        <p>Notre vision : bâtir un <span class="highlight">écosystème numérique inclusif</span> où chaque entreprise burkinabé peut tirer profit des technologies digitales pour croître et prospérer.</p>
-      </div>
-      
-      <div class="about-image">
-        <img src="https://images.pexels.com/photos/3184357/pexels-photo-3184357.jpeg" 
-             alt="Équipe DIGITAL LABS au travail" 
-             loading="lazy">
-      </div>
-    </div>
-  </section>
-</main>
+        hamburger.addEventListener('click', () => {
+            navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+        });
 
-<footer>
-  <div class="container footer-content">
-    <p><strong>DIGITAL LABS</strong> - Solutions Digitales Professionnelles</p>
-    <p>CEO: <a href="https://wa.me/22665405568" class="footer-link">Ouoro Dofiniwatien Ghislain (+226 65405568)</a></p>
-    <p>&copy; 2025 DIGITAL LABS - Tous droits réservés</p>
-  </div>
-</footer>
+        // Fermer le menu quand on clique sur un lien
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.style.display = 'none';
+            });
+        });
 
-<a href="https://wa.me/22665405568" target="_blank" class="whatsapp-float" aria-label="Contact WhatsApp">
-  <i class="fab fa-whatsapp"></i>
-</a>
-
+        // Animation au chargement
+        document.addEventListener('DOMContentLoaded', () => {
+            const teamCards = document.querySelectorAll('.team-card');
+            teamCards.forEach((card, index) => {
+                setTimeout(() => {
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                }, 200 * index);
+            });
+        });
+    </script>
 </body>
-  </html>
+</html>
